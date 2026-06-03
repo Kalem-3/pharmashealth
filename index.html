@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pharmas Sağlık Ürünleri - Magnesium Duadenal ile sağlığınıza değer katıyoruz." />
+  <title>Pharmas Sağlık Ürünleri | Magnesium Duadenal</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- AOS Animate on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header id="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 3C10 3 4 9 4 18C4 22 5.5 25.5 8 28" stroke="#3DAA70" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M18 3C26 3 32 9 32 18C32 22 30.5 25.5 28 28" stroke="#3DAA70" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M18 8V26M12 14L18 8L24 14" stroke="#3DAA70" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="18" cy="30" r="2.5" fill="#E8621A"/>
+        </svg>
+        <span class="logo-text">PHARMAS</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#urun">Ürünümüz</a>
+        <a href="#ozellikler">Faydaları</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#neden-biz">Neden Biz</a>
+        <a href="#iletisim" class="btn-nav">İletişim</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="#urun" class="mobile-link">Ürünümüz</a>
+      <a href="#ozellikler" class="mobile-link">Faydaları</a>
+      <a href="#hakkimizda" class="mobile-link">Hakkımızda</a>
+      <a href="#neden-biz" class="mobile-link">Neden Biz</a>
+      <a href="#iletisim" class="mobile-link">İletişim</a>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-particles" id="particles"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-text" data-aos="fade-right" data-aos-duration="900">
+        <span class="badge">Yeni Nesil Magnezyum Takviyesi</span>
+        <h1>Magnesium<br /><span class="highlight">Duadenal</span></h1>
+        <p class="hero-sub">
+          Duadenal salınım teknolojisiyle maksimum emilim. Stres, yorgunluk ve
+          kas sağlığınız için bilimsel formül.
+        </p>
+        <div class="hero-actions">
+          <a href="#urun" class="btn-primary">Ürünü İncele</a>
+          <a href="#iletisim" class="btn-ghost">Bize Ulaşın</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">%98</span>
+            <span class="stat-label">Emilim Oranı</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Doğal İçerik</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">GMP</span>
+            <span class="stat-label">Sertifikalı Üretim</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+        <div class="product-glow"></div>
+        <img src="images/duadenal.avif" alt="Magnesium Duadenal Ürünü" class="product-img" />
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f8fafc"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ========== TRUST BAR ========== -->
+  <section id="trust-bar">
+    <div class="container trust-inner">
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
+        <i class="fa-solid fa-flask"></i>
+        <span>Klinik Test Onaylı</span>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-seedling"></i>
+        <span>Gluten ve Şeker İçermez</span>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>GMP Sertifikalı Üretim</span>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-truck-fast"></i>
+        <span>Hızlı & Güvenli Teslimat</span>
+      </div>
+      <div class="trust-item" data-aos="fade-up" data-aos-delay="400">
+        <i class="fa-solid fa-headset"></i>
+        <span>7/24 Müşteri Desteği</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCT SECTION ========== -->
+  <section id="urun">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Öne Çıkan Ürün</span>
+        <h2>Magnesium Duadenal</h2>
+        <p>Duadenal salınım teknolojisiyle formüle edilmiş, yüksek biyoyararlanımlı magnezyum takviyesi.</p>
+      </div>
+
+      <div class="product-showcase">
+        <div class="product-images" data-aos="fade-right" data-aos-duration="800">
+          <div class="img-main-wrap">
+            <img src="images/duadenal.avif" alt="Magnesium Duadenal" class="img-main" id="mainProductImg" />
+          </div>
+          <div class="img-thumbs">
+            <img src="images/duadenal.avif" alt="Ürün görsel 1" class="thumb active" onclick="changeImg(this,'images/duadenal.avif')" />
+            <img src="images/duadenal-2.avif" alt="Ürün görsel 2" class="thumb" onclick="changeImg(this,'images/duadenal-2.avif')" />
+          </div>
+        </div>
+
+        <div class="product-details" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+          <div class="product-tag">Magnezyum Takviyesi</div>
+          <h3>Magnesium Duadenal</h3>
+          <p class="product-desc">
+            Özel duadenal salınım teknolojisi sayesinde magnezyum, ince bağırsakta en ideal
+            ortamda çözünerek vücuda maksimum oranda emilir. Stres dönemlerinde tükenen
+            magnezyumu yenilemenin en etkili yolu.
+          </p>
+
+          <div class="product-features">
+            <div class="pf-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Yüksek biyoyararlanım — %98'e kadar emilim</span>
+            </div>
+            <div class="pf-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Stres ve sinir sistemi desteği</span>
+            </div>
+            <div class="pf-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Uyku kalitesini artırır</span>
+            </div>
+            <div class="pf-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Kas fonksiyonlarını destekler</span>
+            </div>
+            <div class="pf-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Gluten ve şeker içermez</span>
+            </div>
+            <div class="pf-item">
+              <i class="fa-solid fa-check-circle"></i>
+              <span>Tatlandırıcı ve koruyucu içermez</span>
+            </div>
+          </div>
+
+          <div class="product-certs">
+            <span class="cert-badge"><i class="fa-solid fa-leaf"></i> Glutensiz</span>
+            <span class="cert-badge"><i class="fa-solid fa-droplet-slash"></i> Şekersiz</span>
+            <span class="cert-badge"><i class="fa-solid fa-award"></i> GMP</span>
+            <span class="cert-badge"><i class="fa-solid fa-vial"></i> Lab Onaylı</span>
+          </div>
+
+          <a href="#iletisim" class="btn-primary btn-lg">Sipariş İçin İletişime Geçin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES / BENEFITS ========== -->
+  <section id="ozellikler">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Bilimsel Faydaları</span>
+        <h2>Neden Magnesium Duadenal?</h2>
+        <p>Magnezyum, vücudun 300'den fazla biyokimyasal reaksiyonunda görev alır. Duadenal teknoloji farkıyla daha etkili.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="feature-icon" style="--icon-color: #3DAA70;">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <h4>Stres Yönetimi</h4>
+          <p>Kortizol seviyelerini dengeleyerek stres ve anksiyete belirtilerini hafifletir. Zihinsel netliği artırır.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="feature-icon" style="--icon-color: #5B6EF5;">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+          <h4>Derin & Kaliteli Uyku</h4>
+          <p>Melatonin üretimini destekleyerek uyku döngüsünü düzenler. Sabah daha dinç uyanmanızı sağlar.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="feature-icon" style="--icon-color: #E8621A;">
+            <i class="fa-solid fa-dumbbell"></i>
+          </div>
+          <h4>Kas & Eklem Sağlığı</h4>
+          <p>Kas kasılmalarını düzenler, kramp ve gerginliği önler. Spor performansını artırır ve toparlanmayı hızlandırır.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="feature-icon" style="--icon-color: #F0B429;">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h4>Enerji & Metabolizma</h4>
+          <p>ATP sentezinde kritik rol oynayarak hücresel enerji üretimini destekler. Yorgunluğu azaltır.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="feature-icon" style="--icon-color: #E84D6D;">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h4>Kalp Sağlığı</h4>
+          <p>Kan basıncının düzenlenmesine yardımcı olur, kardiyovasküler sistemi korur.</p>
+        </div>
+
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="feature-icon" style="--icon-color: #3DAA70;">
+            <i class="fa-solid fa-arrows-to-dot"></i>
+          </div>
+          <h4>Duadenal Salınım</h4>
+          <p>Özel teknolojisiyle ince bağırsakta çözünerek en yüksek emilim oranına ulaşır. Mide rahatsızlığı yaratmaz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section id="nasil-calisir">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Kullanım Rehberi</span>
+        <h2>Nasıl Kullanılır?</h2>
+        <p>Maksimum fayda için önerilen kullanım şekli</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="step-num">01</div>
+          <i class="fa-solid fa-sun step-icon"></i>
+          <h4>Sabah Dozu</h4>
+          <p>Kahvaltıyla birlikte 1 tablet alın. Günün başlangıcında enerji ve odaklanma sağlar.</p>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="step-num">02</div>
+          <i class="fa-solid fa-glass-water step-icon"></i>
+          <h4>Bol Su ile Alın</h4>
+          <p>Bir bardak su ile birlikte alın. Duadenal teknoloji etkin maddeyi en iyi ortamda serbest bırakır.</p>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="step-num">03</div>
+          <i class="fa-solid fa-moon step-icon"></i>
+          <h4>Gece Dozu</h4>
+          <p>Uyumadan 30 dk önce 1 tablet daha alın. Uyku kalitesini ve kas dinlenmesini destekler.</p>
+        </div>
+        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="step-card" data-aos="fade-up" data-aos-delay="450">
+          <div class="step-num">04</div>
+          <i class="fa-solid fa-calendar-check step-icon"></i>
+          <h4>Düzenli Kullanım</h4>
+          <p>3 haftalık düzenli kullanım sonrası en belirgin sonuçlar ortaya çıkar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="hakkimizda">
+    <div class="container about-grid">
+      <div class="about-image-wrap" data-aos="fade-right" data-aos-duration="800">
+        <div class="about-img-bg"></div>
+        <img src="images/duadenal-2.avif" alt="Pharmas Sağlık" class="about-img" />
+        <div class="about-badge-float">
+          <i class="fa-solid fa-award"></i>
+          <div>
+            <strong>Kalite Güvencesi</strong>
+            <span>GMP Sertifikalı</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+        <span class="section-badge">Hakkımızda</span>
+        <h2>Sağlığınıza Değer Katmak İçin Çalışıyoruz</h2>
+        <p>
+          Pharmas Sağlık Ürünleri olarak, insanların daha sağlıklı ve kaliteli bir yaşam
+          sürmelerine katkıda bulunmak için kurulduk. Ar-Ge odaklı yaklaşımımızla
+          bilimsel araştırmaları ürüne dönüştürüyor, her bireyin sağlık ihtiyacına
+          özel çözümler sunuyoruz.
+        </p>
+        <p>
+          Magnesium Duadenal, yıllar süren araştırma ve geliştirme çalışmalarının
+          ürünüdür. Duadenal salınım teknolojisi, magnezyumun vücuda en etkin şekilde
+          aktarılmasını sağlayan özel bir formüldür.
+        </p>
+        <div class="about-values">
+          <div class="value-item">
+            <i class="fa-solid fa-microscope"></i>
+            <div>
+              <strong>Bilim Odaklı</strong>
+              <span>Her formül klinik araştırmalara dayanır</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <i class="fa-solid fa-leaf"></i>
+            <div>
+              <strong>Doğal & Saf</strong>
+              <span>Zararlı katkı maddesi içermez</span>
+            </div>
+          </div>
+          <div class="value-item">
+            <i class="fa-solid fa-handshake"></i>
+            <div>
+              <strong>Güven</strong>
+              <span>Şeffaf üretim, dürüst iletişim</span>
+            </div>
+          </div>
+        </div>
+        <a href="#iletisim" class="btn-primary">Bizimle İletişime Geçin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US ========== -->
+  <section id="neden-biz">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">Neden Pharmas?</span>
+        <h2>Farkımız Nedir?</h2>
+        <p>Kalite, güven ve bilim bir arada.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card" data-aos="zoom-in" data-aos-delay="0">
+          <i class="fa-solid fa-flask-vial"></i>
+          <h4>Gelişmiş Formülasyon</h4>
+          <p>Standart magnezyum takviyelerinden farklı olarak, duadenal salınım teknolojisi ile formüle edilmiştir.</p>
+        </div>
+        <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fa-solid fa-building-columns"></i>
+          <h4>Lisanslı Üretim</h4>
+          <p>Bakanlık onaylı, GMP sertifikalı tesislerde üretilmektedir. Her parti kalite kontrolünden geçer.</p>
+        </div>
+        <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+          <i class="fa-solid fa-user-doctor"></i>
+          <h4>Uzman Danışmanlığı</h4>
+          <p>Ürün geliştirme sürecinde uzman eczacı ve hekimlerden destek alınmıştır.</p>
+        </div>
+        <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h4>Hızlı Teslimat</h4>
+          <p>Siparişleriniz özenle paketlenerek en kısa sürede kapınıza teslim edilir.</p>
+        </div>
+        <div class="why-card" data-aos="zoom-in" data-aos-delay="400">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h4>Memnuniyet Garantisi</h4>
+          <p>Ürününüzden memnun kalmazsanız iade garantisi sunuyoruz. Müşteri memnuniyeti önceliğimizdir.</p>
+        </div>
+        <div class="why-card" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fa-solid fa-comments"></i>
+          <h4>7/24 Destek</h4>
+          <p>WhatsApp ve e-posta üzerinden sorularınızı yanıtlayan uzman ekibimiz her zaman yanınızda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="iletisim">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-badge">İletişim</span>
+        <h2>Bizimle İletişime Geçin</h2>
+        <p>Ürünlerimiz veya sipariş hakkında her türlü sorunuz için buradayız.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right" data-aos-duration="800">
+          <div class="contact-card">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Adres</strong>
+              <span>Küçükbakkalköy Mah. Selvili Sok. No:4 İç Kapı No:20<br />Ataşehir / İstanbul</span>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Telefon / WhatsApp</strong>
+              <a href="tel:+905332595815">+90 533 259 58 15</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>E-posta</strong>
+              <a href="mailto:info@pharmashealth.com">info@pharmashealth.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Çalışma Saatleri</strong>
+              <span>Pazartesi – Cuma: 09:00 – 18:00</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://wa.me/905332595815" class="social-btn whatsapp" aria-label="WhatsApp" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#" class="social-btn instagram" aria-label="Instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="social-btn facebook" aria-label="Facebook" target="_blank">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Ad Soyad</label>
+                <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="+90 5XX XXX XX XX" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-posta</label>
+              <input type="email" id="email" name="email" placeholder="ornek@mail.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Konu</label>
+              <select id="subject" name="subject">
+                <option value="">Konu Seçin</option>
+                <option value="siparis">Sipariş Bilgisi</option>
+                <option value="urun">Ürün Hakkında</option>
+                <option value="bayi">Bayilik / İş Birliği</option>
+                <option value="diger">Diğer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Mesajınız</label>
+              <textarea id="message" name="message" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full">
+              <i class="fa-solid fa-paper-plane"></i> Mesaj Gönder
+            </button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo logo-white">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 3C10 3 4 9 4 18C4 22 5.5 25.5 8 28" stroke="#3DAA70" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 3C26 3 32 9 32 18C32 22 30.5 25.5 28 28" stroke="#3DAA70" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M18 8V26M12 14L18 8L24 14" stroke="#3DAA70" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="30" r="2.5" fill="#E8621A"/>
+          </svg>
+          <span class="logo-text">PHARMAS</span>
+        </a>
+        <p>Pharmas Sağlık Ürünleri Sanayi Ticaret Limited Şirketi</p>
+        <p class="footer-tagline">Sağlığa değer katmak için özenle çalışıyoruz.</p>
+      </div>
+
+      <div class="footer-links">
+        <h5>Hızlı Bağlantılar</h5>
+        <ul>
+          <li><a href="#urun">Ürünümüz</a></li>
+          <li><a href="#ozellikler">Faydaları</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+          <li><a href="#neden-biz">Neden Biz?</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h5>Ürün</h5>
+        <ul>
+          <li><a href="#urun">Magnesium Duadenal</a></li>
+          <li><a href="#ozellikler">Kullanım Rehberi</a></li>
+          <li><a href="#nasil-calisir">Nasıl Çalışır?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h5>İletişim</h5>
+        <p><i class="fa-solid fa-phone"></i> <a href="tel:+905332595815">+90 533 259 58 15</a></p>
+        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@pharmashealth.com">info@pharmashealth.com</a></p>
+        <p><i class="fa-solid fa-location-dot"></i> Ataşehir / İstanbul</p>
+        <div class="footer-social">
+          <a href="https://wa.me/905332595815" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Pharmas Sağlık Ürünleri Sanayi Ticaret Ltd. Şti. Tüm hakları saklıdır.</p>
+        <div class="footer-legal">
+          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Kullanım Koşulları</a>
+          <a href="#">KVKK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905332595815" class="whatsapp-float" target="_blank" aria-label="WhatsApp ile iletişim">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Yukarı çık">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- AOS & Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
