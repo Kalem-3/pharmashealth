@@ -76,26 +76,44 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ---- Contact Form (mailto fallback since static site) ----
+// ---- Contact Form — Web3Forms ----
 const contactForm = document.getElementById('contactForm');
-const formNote = document.getElementById('formNote');
+const formNote    = document.getElementById('formNote');
+const submitBtn   = document.getElementById('submitBtn');
 
-contactForm.addEventListener('submit', e => {
+contactForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const name    = document.getElementById('name').value.trim();
-  const email   = document.getElementById('email').value.trim();
-  const phone   = document.getElementById('phone').value.trim();
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value.trim();
 
-  const subjectLine = `Pharmas İletişim Formu - ${subject || 'Genel'}`;
-  const body = `Ad Soyad: ${name}\nTelefon: ${phone}\nE-posta: ${email}\n\nMesaj:\n${message}`;
-  const mailto = `mailto:info@pharmashealth.com?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...';
+  formNote.textContent = '';
 
-  window.location.href = mailto;
+  const formData = new FormData(contactForm);
+  const data = Object.fromEntries(formData);
 
-  formNote.textContent = 'Mesajınız hazırlandı. E-posta uygulamanız açılacak.';
-  formNote.style.color = '#3DAA70';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    const json = await res.json();
+
+    if (json.success) {
+      formNote.textContent = '✓ Mesajınız alındı! En kısa sürede size dönüş yapacağız.';
+      formNote.style.color = '#3DAA70';
+      contactForm.reset();
+    } else {
+      throw new Error(json.message || 'Bir hata oluştu.');
+    }
+  } catch (err) {
+    formNote.textContent = '✗ Mesaj gönderilemedi. Lütfen tekrar deneyin veya WhatsApp\'tan ulaşın.';
+    formNote.style.color = '#e84d4d';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Mesaj Gönder';
+  }
 });
 
 // ---- Active nav link on scroll ----

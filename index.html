@@ -528,6 +528,12 @@
 
         <div class="contact-form-wrap" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
           <form id="contactForm" class="contact-form">
+            <!-- Web3Forms Key -->
+            <input type="hidden" name="access_key" value="be67b931-d82f-4596-b0d4-cadf5e622979" />
+            <input type="hidden" name="subject" value="Pharmas Web Sitesi - Yeni Mesaj" />
+            <input type="hidden" name="from_name" value="Pharmas Web Sitesi" />
+            <input type="checkbox" name="botcheck" style="display:none;" />
+
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Ad Soyad</label>
@@ -543,20 +549,20 @@
               <input type="email" id="email" name="email" placeholder="ornek@mail.com" required />
             </div>
             <div class="form-group">
-              <label for="subject">Konu</label>
-              <select id="subject" name="subject">
+              <label for="konu">Konu</label>
+              <select id="konu" name="konu">
                 <option value="">Konu Seçin</option>
-                <option value="siparis">Sipariş Bilgisi</option>
-                <option value="urun">Ürün Hakkında</option>
-                <option value="bayi">Bayilik / İş Birliği</option>
-                <option value="diger">Diğer</option>
+                <option value="Sipariş Bilgisi">Sipariş Bilgisi</option>
+                <option value="Ürün Hakkında">Ürün Hakkında</option>
+                <option value="Bayilik / İş Birliği">Bayilik / İş Birliği</option>
+                <option value="Diğer">Diğer</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Mesajınız</label>
               <textarea id="message" name="message" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
             </div>
-            <button type="submit" class="btn-primary btn-full">
+            <button type="submit" class="btn-primary btn-full" id="submitBtn">
               <i class="fa-solid fa-paper-plane"></i> Mesaj Gönder
             </button>
             <p class="form-note" id="formNote"></p>
