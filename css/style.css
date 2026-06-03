@@ -1019,29 +1019,205 @@ section { padding: 100px 0; }
 /* ============================================================
    FLOATING ELEMENTS
    ============================================================ */
-.whatsapp-float {
+/* ---- Floating Group ---- */
+.float-group {
   position: fixed;
   bottom: 28px;
   right: 28px;
   z-index: 999;
-  width: 58px; height: 58px;
-  background: #25D366;
-  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.whatsapp-float,
+.trendyol-float {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px 0 0;
+  height: 54px;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  color: var(--white);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform var(--transition), box-shadow var(--transition), padding var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 54px;
+}
+
+.whatsapp-float { background: #25D366; animation: waBounce 3s ease-in-out infinite; }
+.trendyol-float { background: #F27A1A; animation: waBounce 3.5s ease-in-out infinite; }
+
+.whatsapp-float i, .trendyol-float i {
+  min-width: 54px;
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  color: var(--white);
-  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-  transition: transform var(--transition), box-shadow var(--transition);
-  animation: waBounce 3s ease-in-out infinite;
+  font-size: 1.4rem;
 }
-.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+
+.float-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  max-width: 0;
+  transition: opacity 0.25s ease, max-width 0.3s ease;
+}
+
+.whatsapp-float:hover,
+.trendyol-float:hover {
+  max-width: 200px;
+  padding-right: 20px;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float:hover .float-label,
+.trendyol-float:hover .float-label {
+  opacity: 1;
+  max-width: 120px;
+}
 
 @keyframes waBounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
 }
+
+/* ---- CTA Banner ---- */
+#siparis-banner { background: var(--bg-light); padding: 60px 0; }
+
+.cta-banner {
+  background: linear-gradient(135deg, var(--primary) 0%, #152966 60%, #0e3060 100%);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 320px;
+}
+
+.cta-banner-img {
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+.cta-banner:hover .cta-banner-img img { transform: scale(1.04); }
+
+.cta-banner-content {
+  padding: 48px 48px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cta-tag {
+  display: inline-block;
+  background: rgba(61,170,112,0.25);
+  color: #6EE6A9;
+  border: 1px solid rgba(61,170,112,0.35);
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  width: fit-content;
+}
+
+.cta-banner-content h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.cta-banner-content p {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.cta-btn-wa, .cta-btn-ty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-weight: 600;
+  transition: transform var(--transition), box-shadow var(--transition);
+  flex: 1;
+  min-width: 200px;
+}
+.cta-btn-wa { background: #25D366; box-shadow: 0 4px 16px rgba(37,211,102,0.4); }
+.cta-btn-ty { background: #F27A1A; box-shadow: 0 4px 16px rgba(242,122,26,0.4); }
+.cta-btn-wa:hover, .cta-btn-ty:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+
+.cta-btn-wa i, .cta-btn-ty svg { font-size: 1.6rem; flex-shrink: 0; }
+.cta-btn-wa .cta-btn-label, .cta-btn-ty .cta-btn-label {
+  display: block; font-size: 0.72rem; opacity: 0.8; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.cta-btn-wa .cta-btn-title, .cta-btn-ty .cta-btn-title {
+  display: block; font-size: 0.95rem; font-weight: 700;
+}
+
+/* ---- Order Strip ---- */
+.order-strip {
+  background: var(--primary);
+  padding: 20px 0;
+}
+.order-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.order-strip p {
+  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.order-strip p i { color: #FFD700; }
+.order-strip-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.strip-btn-wa, .strip-btn-ty {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  transition: transform var(--transition), filter var(--transition);
+}
+.strip-btn-wa { background: #25D366; }
+.strip-btn-ty { background: #F27A1A; }
+.strip-btn-wa:hover, .strip-btn-ty:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 .back-to-top {
   position: fixed;
@@ -1121,8 +1297,18 @@ section { padding: 100px 0; }
   .form-row { grid-template-columns: 1fr; }
   .contact-form-wrap { padding: 28px 20px; }
   .about-badge-float { display: none; }
-
   .footer-bottom .container { flex-direction: column; text-align: center; }
+
+  .cta-banner { grid-template-columns: 1fr; }
+  .cta-banner-img { height: 200px; }
+  .cta-banner-content { padding: 32px 24px; }
+  .cta-btn-wa, .cta-btn-ty { min-width: unset; flex: unset; width: 100%; }
+
+  .order-strip-inner { flex-direction: column; align-items: flex-start; }
+  .order-strip-btns { width: 100%; }
+  .strip-btn-wa, .strip-btn-ty { flex: 1; justify-content: center; }
+
+  .float-group { bottom: 20px; right: 16px; }
 }
 
 @media (max-width: 480px) {
