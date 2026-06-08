@@ -167,6 +167,32 @@ const countersObserver = new IntersectionObserver((entries) => {
 const heroStats = document.querySelector('.hero-stats');
 if (heroStats) countersObserver.observe(heroStats);
 
+// ---- WhatsApp Popup ----
+(function initWaPopup() {
+  const popup = document.getElementById('waPopup');
+  const closeBtn = document.getElementById('waPopupClose');
+  if (!popup) return;
+  if (sessionStorage.getItem('wa-popup-closed')) return;
+  setTimeout(() => popup.classList.add('show'), 12000);
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('show');
+    sessionStorage.setItem('wa-popup-closed', '1');
+  });
+})();
+
+// ---- KVKK Cookie Banner ----
+(function initKvkk() {
+  const banner = document.getElementById('kvkkBanner');
+  const acceptBtn = document.getElementById('kvkkAccept');
+  const rejectBtn = document.getElementById('kvkkReject');
+  if (!banner) return;
+  if (localStorage.getItem('kvkk-consent')) return;
+  setTimeout(() => banner.classList.add('show'), 1500);
+  function dismiss() { banner.classList.remove('show'); }
+  acceptBtn.addEventListener('click', () => { localStorage.setItem('kvkk-consent', 'accepted'); dismiss(); });
+  rejectBtn.addEventListener('click', () => { localStorage.setItem('kvkk-consent', 'rejected'); dismiss(); });
+})();
+
 // ---- FAQ Accordion ----
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
