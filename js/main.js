@@ -278,22 +278,37 @@ document.querySelectorAll('.flip-card').forEach(card => {
   startAutoplay();
 })();
 
-// ---- Product Modals ----
-function openProdModal(id) {
-  document.getElementById('prodModalOverlay').classList.add('active');
-  document.getElementById('modal-' + id).classList.add('active');
+// ---- Product View Panels ----
+function openProdView(id) {
+  // Close mobile menu if open
+  document.getElementById('hamburger').classList.remove('active');
+  document.getElementById('mobileMenu').classList.remove('open');
+
+  document.getElementById('pviewBackdrop').classList.add('active');
+  const panel = document.getElementById('pview-' + id);
+  if (panel) {
+    panel.classList.add('active');
+    // Scroll panel body to top
+    const body = panel.querySelector('.pview-body');
+    if (body) body.scrollTop = 0;
+  }
   document.body.style.overflow = 'hidden';
-  // Re-run AOS for newly visible content
-  if (window.AOS) AOS.refresh();
 }
 
-function closeProdModal() {
-  document.querySelectorAll('.prod-modal.active').forEach(m => m.classList.remove('active'));
-  document.getElementById('prodModalOverlay').classList.remove('active');
+function closeProdView() {
+  document.querySelectorAll('.pview.active').forEach(p => p.classList.remove('active'));
+  document.getElementById('pviewBackdrop').classList.remove('active');
   document.body.style.overflow = '';
 }
 
-// Close modal on Escape key
+// Close on Escape
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeProdModal();
+  if (e.key === 'Escape') closeProdView();
+});
+
+// Flip cards in view panels (touch support)
+document.querySelectorAll('.pview .flip-card').forEach(card => {
+  card.addEventListener('click', () => {
+    if (window.innerWidth <= 1024) card.classList.toggle('flipped');
+  });
 });

@@ -32,12 +32,12 @@
         <div class="nav-dropdown">
           <button class="nav-dd-trigger">Ürün <i class="fa-solid fa-chevron-down"></i></button>
           <div class="nav-dd-menu">
-            <a href="#" onclick="openProdModal('urun'); return false;"><i class="fa-solid fa-capsules"></i> Magnesium Duodenal</a>
-            <a href="#" onclick="openProdModal('ozellikler'); return false;"><i class="fa-solid fa-star"></i> Faydaları</a>
-            <a href="#" onclick="openProdModal('icerik-detay'); return false;"><i class="fa-solid fa-flask-vial"></i> İçerik Detayı</a>
-            <a href="#" onclick="openProdModal('drcaps'); return false;"><i class="fa-solid fa-seedling"></i> DRcaps Teknoloji</a>
-            <a href="#" onclick="openProdModal('karsilastirma'); return false;"><i class="fa-solid fa-table-list"></i> Karşılaştırma</a>
-            <a href="#" onclick="openProdModal('sertifikalar'); return false;"><i class="fa-solid fa-award"></i> Sertifikalar</a>
+            <a href="#" onclick="openProdView('urun'); return false;"><i class="fa-solid fa-capsules"></i> Magnesium Duodenal</a>
+            <a href="#" onclick="openProdView('ozellikler'); return false;"><i class="fa-solid fa-star"></i> Faydaları</a>
+            <a href="#" onclick="openProdView('icerik-detay'); return false;"><i class="fa-solid fa-flask-vial"></i> İçerik Detayı</a>
+            <a href="#" onclick="openProdView('drcaps'); return false;"><i class="fa-solid fa-seedling"></i> DRcaps Teknoloji</a>
+            <a href="#" onclick="openProdView('karsilastirma'); return false;"><i class="fa-solid fa-table-list"></i> Karşılaştırma</a>
+            <a href="#" onclick="openProdView('sertifikalar'); return false;"><i class="fa-solid fa-award"></i> Sertifikalar</a>
           </div>
         </div>
         <a href="#hakkimizda">Hakkımızda</a>
@@ -55,12 +55,12 @@
     <!-- Mobile Menu -->
     <nav class="mobile-menu" id="mobileMenu">
       <span class="mobile-group-label">— Ürün —</span>
-      <a href="#" onclick="openProdModal('urun'); return false;" class="mobile-link mobile-sub">Magnesium Duodenal</a>
-      <a href="#" onclick="openProdModal('ozellikler'); return false;" class="mobile-link mobile-sub">Faydaları</a>
-      <a href="#" onclick="openProdModal('icerik-detay'); return false;" class="mobile-link mobile-sub">İçerik Detayı</a>
-      <a href="#" onclick="openProdModal('drcaps'); return false;" class="mobile-link mobile-sub">DRcaps Teknoloji</a>
-      <a href="#" onclick="openProdModal('karsilastirma'); return false;" class="mobile-link mobile-sub">Karşılaştırma</a>
-      <a href="#" onclick="openProdModal('sertifikalar'); return false;" class="mobile-link mobile-sub">Sertifikalar</a>
+      <a href="#" onclick="openProdView('urun'); return false;" class="mobile-link mobile-sub">Magnesium Duodenal</a>
+      <a href="#" onclick="openProdView('ozellikler'); return false;" class="mobile-link mobile-sub">Faydaları</a>
+      <a href="#" onclick="openProdView('icerik-detay'); return false;" class="mobile-link mobile-sub">İçerik Detayı</a>
+      <a href="#" onclick="openProdView('drcaps'); return false;" class="mobile-link mobile-sub">DRcaps Teknoloji</a>
+      <a href="#" onclick="openProdView('karsilastirma'); return false;" class="mobile-link mobile-sub">Karşılaştırma</a>
+      <a href="#" onclick="openProdView('sertifikalar'); return false;" class="mobile-link mobile-sub">Sertifikalar</a>
       <a href="#hakkimizda" class="mobile-link">Hakkımızda</a>
       <a href="#yorumlar" class="mobile-link">Yorumlar</a>
       <a href="#sss" class="mobile-link">SSS</a>
@@ -539,9 +539,8 @@
         <h2>Size En Uygun Paketi Seçin</h2>
         <p>Her iki paket de aynı premium formülü içerir — sadece süre değişir.</p>
       </div>
-      <div class="pricing-grid" style="grid-template-columns:1fr;max-width:480px;margin:0 auto;">
-
-        <div class="pricing-card pricing-featured" data-aos="fade-up" data-aos-delay="150">
+      <div class="pricing-grid" style="grid-template-columns:1fr;max-width:500px;margin:0 auto;">
+<div class="pricing-card pricing-featured" data-aos="fade-up" data-aos-delay="150">
           <div class="pricing-popular-badge">En Çok Tercih Edilen</div>
           <div class="pricing-top">
             <span class="pricing-name">Ekonomi Paketi</span>
@@ -839,24 +838,33 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
 
-<!-- ========== PRODUCT MODALS ========== -->
-<div class="prod-modal-overlay" id="prodModalOverlay" onclick="closeProdModal()"></div>
+<!-- ========== PRODUCT VIEW PANELS ========== -->
+<div class="pview-backdrop" id="pviewBackdrop" onclick="closeProdView()"></div>
 
-<div class="prod-modal" id="modal-urun" role="dialog" aria-modal="true" aria-label="Magnesium Duodenal">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-capsules"></i> Magnesium Duodenal</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-urun" role="region" aria-label="Magnesium Duodenal">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Magnesium Duodenal</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">Öne Çıkan Ürün</span>
         <h2>Magnesium Duodenal</h2>
         <p>Duodenal salınım teknolojisiyle formüle edilmiş, yüksek biyoyararlanımlı magnezyum takviyesi.</p>
       </div>
 
       <div class="product-showcase">
-        <div class="product-images" data-aos="fade-right" data-aos-duration="800">
+        <div class="product-images">
           <div class="img-main-wrap">
             <img src="images/gorseliki.png" alt="Magnesium Duodenal" class="img-main" id="mainProductImg" />
           </div>
@@ -866,7 +874,7 @@
           </div>
         </div>
 
-        <div class="product-details" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
+        <div class="product-details">
           <div class="product-tag">Magnezyum Takviyesi</div>
           <h3>Magnesium Duodenal</h3>
           <p class="product-desc">
@@ -937,22 +945,32 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </div>
 
-<div class="prod-modal" id="modal-galeri" role="dialog" aria-modal="true" aria-label="Ürün Görselleri">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-images"></i> Ürün Görselleri</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-galeri" role="region" aria-label="Ürün Görselleri">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Ürün Görselleri</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">Ürün Görselleri</span>
         <h2>Magnesium Duodenal 5</h2>
         <p>5 Yıldızlı Magnezyum formülünü yakından tanıyın</p>
       </div>
-      <div class="gallery-slider" data-aos="zoom-in" data-aos-duration="800">
+      <div class="gallery-slider">
         <div class="slider-track" id="sliderTrack">
           <div class="slide"><img src="images/slide1.jpeg" alt="Magnesium Duodenal 5 - Görsel 1" /></div>
           <div class="slide"><img src="images/slide2.jpeg" alt="Magnesium Duodenal 5 - Görsel 2" /></div>
@@ -968,24 +986,34 @@
         <div class="slider-dots" id="sliderDots"></div>
       </div>
     </div>
+    </div>
   </div>
 </div>
 
-<div class="prod-modal" id="modal-ozellikler" role="dialog" aria-modal="true" aria-label="Faydaları">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-star"></i> Faydaları</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-ozellikler" role="region" aria-label="Faydaları">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Faydaları</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">Bilimsel Faydaları</span>
         <h2>Neden Magnesium Duodenal?</h2>
         <p>Magnezyum, vücudun 300'den fazla biyokimyasal reaksiyonunda görev alır. Duodenal teknoloji farkıyla daha etkili.</p>
       </div>
 
       <div class="features-grid">
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #3DAA70;">
             <i class="fa-solid fa-brain"></i>
           </div>
@@ -993,7 +1021,7 @@
           <p>Kortizol seviyelerini dengeleyerek stres ve anksiyete belirtilerini hafifletir. Zihinsel netliği artırır.</p>
         </div>
 
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #5B6EF5;">
             <i class="fa-solid fa-moon"></i>
           </div>
@@ -1001,7 +1029,7 @@
           <p>Melatonin üretimini destekleyerek uyku döngüsünü düzenler. Sabah daha dinç uyanmanızı sağlar.</p>
         </div>
 
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #E8621A;">
             <i class="fa-solid fa-dumbbell"></i>
           </div>
@@ -1009,7 +1037,7 @@
           <p>Kas kasılmalarını düzenler, kramp ve gerginliği önler. Spor performansını artırır ve toparlanmayı hızlandırır.</p>
         </div>
 
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #F0B429;">
             <i class="fa-solid fa-bolt"></i>
           </div>
@@ -1017,7 +1045,7 @@
           <p>ATP sentezinde kritik rol oynayarak hücresel enerji üretimini destekler. Yorgunluğu azaltır.</p>
         </div>
 
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #E84D6D;">
             <i class="fa-solid fa-heart-pulse"></i>
           </div>
@@ -1025,7 +1053,7 @@
           <p>Kan basıncının düzenlenmesine yardımcı olur, kardiyovasküler sistemi korur.</p>
         </div>
 
-        <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="feature-card">
           <div class="feature-icon" style="--icon-color: #3DAA70;">
             <i class="fa-solid fa-arrows-to-dot"></i>
           </div>
@@ -1034,24 +1062,34 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </div>
 
-<div class="prod-modal" id="modal-icerik-detay" role="dialog" aria-modal="true" aria-label="İçerik Detayı">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-flask-vial"></i> İçerik Detayı</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-icerik-detay" role="region" aria-label="İçerik Detayı">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>İçerik Detayı</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">5 Organik Form + 2 Güçlendirici</span>
         <h2>Her İçeriğin Gücü</h2>
         <p>Kartların üzerine gelin — her bileşenin vücudunuza özel katkısını keşfedin.</p>
       </div>
       <div class="flip-grid">
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#3DAA70;"><i class="fa-solid fa-brain"></i></div>
             <div class="fc-mg">130 mg</div>
@@ -1070,7 +1108,7 @@
           </div>
         </div>
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#5B6EF5;"><i class="fa-solid fa-lightbulb"></i></div>
             <div class="fc-mg">30 mg</div>
@@ -1089,7 +1127,7 @@
           </div>
         </div>
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#E84D6D;"><i class="fa-solid fa-heart-pulse"></i></div>
             <div class="fc-mg">10 mg</div>
@@ -1108,7 +1146,7 @@
           </div>
         </div>
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#E8621A;"><i class="fa-solid fa-fire-flame-curved"></i></div>
             <div class="fc-mg">10 mg</div>
@@ -1127,7 +1165,7 @@
           </div>
         </div>
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="320">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#F0B429;"><i class="fa-solid fa-bolt"></i></div>
             <div class="fc-mg">10 mg</div>
@@ -1146,7 +1184,7 @@
           </div>
         </div>
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#3DAA70;"><i class="fa-solid fa-dna"></i></div>
             <div class="fc-mg">10 mg</div>
@@ -1165,7 +1203,7 @@
           </div>
         </div>
 
-        <div class="flip-card" data-aos="fade-up" data-aos-delay="480">
+        <div class="flip-card">
           <div class="flip-front">
             <div class="fc-icon" style="--fc-color:#0B1D4A;"><i class="fa-solid fa-shield-halved"></i></div>
             <div class="fc-mg">10 mg</div>
@@ -1186,56 +1224,149 @@
 
       </div>
     </div>
+    </div>
   </div>
 </div>
 
-<div class="prod-modal" id="modal-drcaps" role="dialog" aria-modal="true" aria-label="DRcaps Teknolojisi">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-seedling"></i> DRcaps Teknolojisi</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-referanslar" role="region" aria-label="Bilimsel Referanslar">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Bilimsel Referanslar</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Bilimsel Dayanak</span>
+        <h2>Araştırmalar Ne Diyor?</h2>
+        <p>Formülümüzdeki her bileşen, hakemli bilimsel yayınlarla desteklenmektedir.</p>
+      </div>
+      <div class="ref-grid">
+
+        <div class="ref-card">
+          <div class="ref-icon" style="--rc:#3DAA70;"><i class="fa-solid fa-brain"></i></div>
+          <div class="ref-body">
+            <span class="ref-ingredient">Magnezyum Bisglisinat</span>
+            <p class="ref-title">"The Effects of Magnesium Supplementation on Subjective Anxiety and Stress"</p>
+            <span class="ref-cite">Boyle NB et al. — <em>Nutrients</em>, 2017; 9(5):429</span>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-icon" style="--rc:#5B6EF5;"><i class="fa-solid fa-lightbulb"></i></div>
+          <div class="ref-body">
+            <span class="ref-ingredient">Magnezyum L-Treonat</span>
+            <p class="ref-title">"Enhancement of Learning and Memory by Elevating Brain Magnesium"</p>
+            <span class="ref-cite">Slutsky I et al. — <em>Neuron</em>, 2010; 65(2):165-177</span>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-icon" style="--rc:#E84D6D;"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="ref-body">
+            <span class="ref-ingredient">Magnezyum Taurat</span>
+            <p class="ref-title">"Magnesium and cardiovascular system"</p>
+            <span class="ref-cite">Shechter M. — <em>Magnesium Research</em>, 2010; 23(2):60-72</span>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-icon" style="--rc:#E8621A;"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <div class="ref-body">
+            <span class="ref-ingredient">Magnezyum Sitrat</span>
+            <p class="ref-title">"Mg citrate found more bioavailable than other Mg preparations"</p>
+            <span class="ref-cite">Walker AF et al. — <em>Magnesium Research</em>, 2003; 16(3):183-191</span>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-icon" style="--rc:#F0B429;"><i class="fa-solid fa-bolt"></i></div>
+          <div class="ref-body">
+            <span class="ref-ingredient">Magnezyum Malat</span>
+            <p class="ref-title">"Treatment of fibromyalgia syndrome with Super Malic: a randomized double blind placebo controlled crossover pilot study"</p>
+            <span class="ref-cite">Russell IJ et al. — <em>J Rheumatol</em>, 1995; 22(5):953-958</span>
+          </div>
+        </div>
+
+        <div class="ref-card">
+          <div class="ref-icon" style="--rc:#3DAA70;"><i class="fa-solid fa-dna"></i></div>
+          <div class="ref-body">
+            <span class="ref-ingredient">Aktif B6 Vitamini (P5P)</span>
+            <p class="ref-title">"Non-nutritional uses of vitamin B6"</p>
+            <span class="ref-cite">Bender DA. — <em>British Journal of Nutrition</em>, 1999; 81(1):7-20</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="pview" id="pview-drcaps" role="region" aria-label="DRcaps Teknolojisi">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>DRcaps Teknolojisi</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="pview-body">
+    <div class="container">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">Capsugel® DRcaps® Teknolojisi</span>
         <h2>Bitkisel Kapsül Farkı</h2>
         <p>Kimyasal enterik film kaplama olmadan mide asidine doğal direnç — bağırsakta maksimum çözünme ve emilim.</p>
       </div>
 
       <div class="drcaps-grid">
-        <div class="drcaps-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="drcaps-card">
           <i class="fa-solid fa-shield-halved"></i>
           <h4>Mide Asidine Yüksek Direnç</h4>
           <p>Kimyasal film kaplama gerektirmeden mide ortamında bütünlüğünü korur. Düşük pH koşullarına duyarlı maddeleri en etkili şekilde korur.</p>
         </div>
-        <div class="drcaps-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="drcaps-card">
           <i class="fa-solid fa-seedling"></i>
           <h4>%100 Bitkisel Kökenli</h4>
           <p>HPMC bazlı bitkisel kapsül. GDO, gluten, nişasta ve koruyucu içermez. Vegetarian Society tarafından onaylıdır.</p>
         </div>
-        <div class="drcaps-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="drcaps-card">
           <i class="fa-solid fa-arrows-to-dot"></i>
           <h4>Bağırsakta Hedefli Salınım</h4>
           <p>Hassas içerikleri ince bağırsakta serbest bırakır. Gecikmeli salınım sayesinde reflü riskini en aza indirir, tat ve kokuyu maskeler.</p>
         </div>
-        <div class="drcaps-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="drcaps-card">
           <i class="fa-solid fa-temperature-low"></i>
           <h4>Zorlu Koşullara Dayanıklı</h4>
           <p>Fiziksel olarak kararlı polimer yapısı, zorlu ısı ve nem koşullarına dayanıklıdır. Neme duyarlı bileşenler için ideal düşük nem içeriğine sahiptir.</p>
         </div>
-        <div class="drcaps-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="drcaps-card">
           <i class="fa-solid fa-award"></i>
           <h4>Kosher & Helal Sertifikalı</h4>
           <p>Kosher (OU ve Ko) ve Helal (IFANCA) sertifikasına sahiptir. Kimyasal bileşen içermez, enterik film kaplı değildir.</p>
         </div>
-        <div class="drcaps-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="drcaps-card">
           <i class="fa-solid fa-tag"></i>
           <h4>Clean Label Ürün</h4>
           <p>Tablet üretiminde kullanılan katkı maddelerine olan gereksinimi ortadan kaldıran en sade ve temiz etiket alternatif.</p>
         </div>
       </div>
 
-      <div class="drcaps-certifications" data-aos="fade-up" data-aos-delay="100">
+      <div class="drcaps-certifications">
         <div class="drcaps-cert-tag"><i class="fa-solid fa-check"></i> GDO İçermez</div>
         <div class="drcaps-cert-tag"><i class="fa-solid fa-check"></i> Gluten İçermez</div>
         <div class="drcaps-cert-tag"><i class="fa-solid fa-check"></i> Nişasta İçermez</div>
@@ -1245,22 +1376,32 @@
         <div class="drcaps-cert-tag"><i class="fa-solid fa-check"></i> Enterik Film Kaplı Değil</div>
       </div>
     </div>
+    </div>
   </div>
 </div>
 
-<div class="prod-modal" id="modal-karsilastirma" role="dialog" aria-modal="true" aria-label="Karşılaştırma">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-table-list"></i> Karşılaştırma</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-karsilastirma" role="region" aria-label="Karşılaştırma">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Karşılaştırma</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">Neden Farklıyız?</span>
         <h2>Magnesium Duodenal 5 vs Diğer Magnezyumlar</h2>
         <p>Sıradan bir magnezyum takviyesinden farkı — rakamlarla ve net şekilde.</p>
       </div>
-      <div class="comparison-wrap" data-aos="fade-up" data-aos-duration="800">
+      <div class="comparison-wrap">
         <table class="comp-table">
           <thead>
             <tr>
@@ -1314,96 +1455,33 @@
         </table>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="prod-modal" id="modal-referanslar" role="dialog" aria-modal="true" aria-label="Bilimsel Referanslar">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-book-open"></i> Bilimsel Referanslar</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
-  </div>
-  <div class="prod-modal-body">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-badge">Bilimsel Dayanak</span>
-        <h2>Araştırmalar Ne Diyor?</h2>
-        <p>Formülümüzdeki her bileşen, hakemli bilimsel yayınlarla desteklenmektedir.</p>
-      </div>
-      <div class="ref-grid">
-
-        <div class="ref-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="ref-icon" style="--rc:#3DAA70;"><i class="fa-solid fa-brain"></i></div>
-          <div class="ref-body">
-            <span class="ref-ingredient">Magnezyum Bisglisinat</span>
-            <p class="ref-title">"The Effects of Magnesium Supplementation on Subjective Anxiety and Stress"</p>
-            <span class="ref-cite">Boyle NB et al. — <em>Nutrients</em>, 2017; 9(5):429</span>
-          </div>
-        </div>
-
-        <div class="ref-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="ref-icon" style="--rc:#5B6EF5;"><i class="fa-solid fa-lightbulb"></i></div>
-          <div class="ref-body">
-            <span class="ref-ingredient">Magnezyum L-Treonat</span>
-            <p class="ref-title">"Enhancement of Learning and Memory by Elevating Brain Magnesium"</p>
-            <span class="ref-cite">Slutsky I et al. — <em>Neuron</em>, 2010; 65(2):165-177</span>
-          </div>
-        </div>
-
-        <div class="ref-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="ref-icon" style="--rc:#E84D6D;"><i class="fa-solid fa-heart-pulse"></i></div>
-          <div class="ref-body">
-            <span class="ref-ingredient">Magnezyum Taurat</span>
-            <p class="ref-title">"Magnesium and cardiovascular system"</p>
-            <span class="ref-cite">Shechter M. — <em>Magnesium Research</em>, 2010; 23(2):60-72</span>
-          </div>
-        </div>
-
-        <div class="ref-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="ref-icon" style="--rc:#E8621A;"><i class="fa-solid fa-fire-flame-curved"></i></div>
-          <div class="ref-body">
-            <span class="ref-ingredient">Magnezyum Sitrat</span>
-            <p class="ref-title">"Mg citrate found more bioavailable than other Mg preparations"</p>
-            <span class="ref-cite">Walker AF et al. — <em>Magnesium Research</em>, 2003; 16(3):183-191</span>
-          </div>
-        </div>
-
-        <div class="ref-card" data-aos="fade-up" data-aos-delay="80">
-          <div class="ref-icon" style="--rc:#F0B429;"><i class="fa-solid fa-bolt"></i></div>
-          <div class="ref-body">
-            <span class="ref-ingredient">Magnezyum Malat</span>
-            <p class="ref-title">"Treatment of fibromyalgia syndrome with Super Malic: a randomized double blind placebo controlled crossover pilot study"</p>
-            <span class="ref-cite">Russell IJ et al. — <em>J Rheumatol</em>, 1995; 22(5):953-958</span>
-          </div>
-        </div>
-
-        <div class="ref-card" data-aos="fade-up" data-aos-delay="160">
-          <div class="ref-icon" style="--rc:#3DAA70;"><i class="fa-solid fa-dna"></i></div>
-          <div class="ref-body">
-            <span class="ref-ingredient">Aktif B6 Vitamini (P5P)</span>
-            <p class="ref-title">"Non-nutritional uses of vitamin B6"</p>
-            <span class="ref-cite">Bender DA. — <em>British Journal of Nutrition</em>, 1999; 81(1):7-20</span>
-          </div>
-        </div>
-
-      </div>
     </div>
   </div>
 </div>
 
-<div class="prod-modal" id="modal-sertifikalar" role="dialog" aria-modal="true" aria-label="Sertifikalar">
-  <div class="prod-modal-header">
-    <span class="prod-modal-title"><i class="fa-solid fa-award"></i> Sertifikalar</span>
-    <button class="prod-modal-close" onclick="closeProdModal()" aria-label="Kapat"><i class="fa-solid fa-xmark"></i></button>
+<div class="pview" id="pview-sertifikalar" role="region" aria-label="Sertifikalar">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Sertifikalar</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
   </div>
-  <div class="prod-modal-body">
+  <div class="pview-body">
     <div class="container">
-      <div class="section-header" data-aos="fade-up">
+      <div class="container">
+      <div class="section-header">
         <span class="section-badge">Kalite Güvencesi</span>
         <h2>Sertifikalar</h2>
         <p>Uluslararası standartlara uygun, bağımsız kuruluşlar tarafından denetlenen üretim tesisleri.</p>
       </div>
 
-      <div class="cert-grid" data-aos="fade-up">
+      <div class="cert-grid">
         <div class="cert-item">
           <div class="cert-icon-box">ISO<br>9001</div>
           <span class="cert-label">Kalite Yönetim</span>
@@ -1430,7 +1508,7 @@
         </div>
       </div>
 
-      <div class="free-tags" data-aos="fade-up" data-aos-delay="100">
+      <div class="free-tags">
         <div class="free-tag"><i class="fa-solid fa-ban"></i> Paraben Free</div>
         <div class="free-tag"><i class="fa-solid fa-ban"></i> Sulfate Free</div>
         <div class="free-tag"><i class="fa-solid fa-ban"></i> Phosphate Free</div>
@@ -1439,9 +1517,10 @@
         <div class="free-tag"><i class="fa-solid fa-recycle"></i> Geri Dönüştürülebilir</div>
       </div>
     </div>
+    </div>
   </div>
 </div>
-<!-- ========== /PRODUCT MODALS ========== -->
+<!-- ========== /PRODUCT VIEW PANELS ========== -->
 
 </body>
 </html>
