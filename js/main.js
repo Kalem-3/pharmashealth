@@ -277,3 +277,23 @@ document.querySelectorAll('.flip-card').forEach(card => {
 
   startAutoplay();
 })();
+
+// ---- Product Modals ----
+function openProdModal(id) {
+  document.getElementById('prodModalOverlay').classList.add('active');
+  document.getElementById('modal-' + id).classList.add('active');
+  document.body.style.overflow = 'hidden';
+  // Re-run AOS for newly visible content
+  if (window.AOS) AOS.refresh();
+}
+
+function closeProdModal() {
+  document.querySelectorAll('.prod-modal.active').forEach(m => m.classList.remove('active'));
+  document.getElementById('prodModalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeProdModal();
+});
