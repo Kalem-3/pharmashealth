@@ -312,3 +312,69 @@ document.querySelectorAll('.pview .flip-card').forEach(card => {
     if (window.innerWidth <= 1024) card.classList.toggle('flipped');
   });
 });
+
+// ---- Ana Sayfa Foto Galeri Slider ----
+(function initFgSlider() {
+  const track = document.getElementById('fgTrack');
+  const dotsContainer = document.getElementById('fgDots');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.fg-slide');
+  const total = slides.length;
+  let current = 0;
+  let autoTimer;
+
+  // Kaç slide görünecek (responsive)
+  function visibleCount() {
+    if (window.innerWidth <= 560) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 3;
+  }
+
+  // Dots oluştur
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'fg-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Görsel ${i + 1}`);
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    const vis = visibleCount();
+    const maxIndex = total - vis;
+    current = Math.max(0, Math.min(index, maxIndex));
+    const slideWidth = track.parentElement.offsetWidth / vis;
+    track.style.transform = `translateX(-${current * slideWidth}px)`;
+    dotsContainer.querySelectorAll('.fg-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById('fgNext').addEventListener('click', () => { next(); resetAuto(); });
+  document.getElementById('fgPrev').addEventListener('click', () => { prev(); resetAuto(); });
+
+  function startAuto() { autoTimer = setInterval(next, 4000); }
+  function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
+  // Pause on hover
+  const wrap = track.closest('.fg-slider-wrap');
+  wrap.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  wrap.addEventListener('mouseleave', startAuto);
+
+  // Touch swipe
+  let touchX = 0;
+  wrap.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  wrap.addEventListener('touchend', e => {
+    const diff = touchX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); resetAuto(); }
+  });
+
+  // Recalculate on resize
+  window.addEventListener('resize', () => goTo(current));
+
+  startAuto();
+})();
