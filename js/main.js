@@ -167,6 +167,29 @@ const countersObserver = new IntersectionObserver((entries) => {
 const heroStats = document.querySelector('.hero-stats');
 if (heroStats) countersObserver.observe(heroStats);
 
+// ---- FAQ Accordion ----
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(a => {
+    a.classList.remove('open');
+    a.previousElementSibling.classList.remove('active');
+  });
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('active');
+  }
+}
+
+// ---- Ingredient Flip Cards (mobile touch) ----
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', () => {
+    if (window.innerWidth <= 1024) {
+      card.classList.toggle('flipped');
+    }
+  });
+});
+
 // ---- Photo Gallery Slider ----
 (function initSlider() {
   const track = document.getElementById('sliderTrack');
