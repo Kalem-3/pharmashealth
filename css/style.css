@@ -932,8 +932,16 @@ section { padding: 100px 0; }
 .form-note {
   text-align: center;
   margin-top: 12px;
-  font-size: 0.88rem;
-  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 22px;
+  transition: color var(--transition);
+}
+
+#submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
 }
 
 /* ============================================================
@@ -1316,4 +1324,462 @@ section { padding: 100px 0; }
   .hero-text h1 { font-size: 2.2rem; }
   .hero-stats { gap: 14px; }
   .product-certs { gap: 8px; }
+}
+
+/* ============================================================
+   PRODUCT HIGHLIGHTS (5 Temel Özellik)
+   ============================================================ */
+.product-highlights {
+  background: linear-gradient(135deg, rgba(61,170,112,0.07) 0%, rgba(11,29,74,0.04) 100%);
+  border: 1px solid rgba(61,170,112,0.22);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.ph-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-mid);
+}
+
+.ph-item i {
+  color: #22c55e;
+  font-size: 1rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.ph-item strong { color: var(--primary); }
+
+/* ============================================================
+   INGREDIENT TABLE
+   ============================================================ */
+.ingredient-table {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+  margin-bottom: 28px;
+}
+
+.ingredient-table-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ingredient-table-title i { color: var(--accent); }
+
+.ingredient-table-title span {
+  font-weight: 400;
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+.ing-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ing-table tr { border-bottom: 1px solid var(--border); }
+.ing-table tr:last-child { border-bottom: none; }
+
+.ing-table td {
+  padding: 8px 4px;
+  font-size: 0.86rem;
+}
+
+.ing-table td:first-child {
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+.ing-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.ing-table .ing-total {
+  border-top: 2px solid var(--accent);
+}
+
+.ing-table .ing-total td {
+  padding-top: 10px;
+  font-weight: 800;
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   PHOTO GALLERY SLIDER
+   ============================================================ */
+#galeri {
+  background: var(--primary);
+  padding: 100px 0;
+}
+
+#galeri .section-header h2 { color: var(--white); }
+#galeri .section-header p { color: rgba(255,255,255,0.6); }
+#galeri .section-badge {
+  background: rgba(61,170,112,0.2);
+  color: #6EE6A9;
+  border: 1px solid rgba(61,170,112,0.35);
+}
+
+.gallery-slider {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+  background: #04091a;
+  user-select: none;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.slide { min-width: 100%; }
+
+.slide img {
+  width: 100%;
+  height: 560px;
+  object-fit: contain;
+  background: #04091a;
+  display: block;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  width: 52px; height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--white);
+  transition: all var(--transition);
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-prev { left: 20px; }
+.slider-next { right: 20px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.slider-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all var(--transition);
+  padding: 0;
+}
+
+.slider-dot.active {
+  background: var(--white);
+  border-color: var(--white);
+  transform: scale(1.3);
+}
+
+/* ============================================================
+   DRCAPS TECHNOLOGY
+   ============================================================ */
+#drcaps {
+  background: linear-gradient(135deg, #071030 0%, #0B1D4A 60%, #0e3060 100%);
+  padding: 100px 0;
+}
+
+#drcaps .section-header h2 { color: var(--white); }
+#drcaps .section-header p { color: rgba(255,255,255,0.6); }
+#drcaps .section-badge {
+  background: rgba(61,170,112,0.2);
+  color: #6EE6A9;
+  border: 1px solid rgba(61,170,112,0.35);
+}
+
+.drcaps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.drcaps-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 28px 26px;
+  transition: all var(--transition);
+}
+
+.drcaps-card:hover {
+  background: rgba(255,255,255,0.11);
+  transform: translateY(-5px);
+  border-color: rgba(61,170,112,0.3);
+}
+
+.drcaps-card i {
+  font-size: 1.7rem;
+  color: #6EE6A9;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.drcaps-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.drcaps-card p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+}
+
+.drcaps-certifications {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.drcaps-cert-tag {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.85);
+  padding: 9px 20px;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.drcaps-cert-tag i { color: #6EE6A9; font-size: 0.85rem; }
+
+/* ============================================================
+   COMPARISON TABLE
+   ============================================================ */
+#karsilastirma {
+  padding: 100px 0;
+  background: var(--bg-light);
+}
+
+.comparison-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 560px;
+}
+
+.comp-table thead th {
+  padding: 22px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.comp-table thead th:first-child {
+  background: var(--white);
+  color: transparent;
+  width: 36%;
+}
+
+.comp-table thead th.col-ours {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.comp-table thead th.col-others {
+  background: #f1f5f9;
+  color: var(--text-light);
+}
+
+.comp-table tbody td {
+  padding: 15px 28px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.91rem;
+}
+
+.comp-table tbody tr:last-child td { border-bottom: none; }
+
+.comp-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-dark);
+  background: rgba(11,29,74,0.02);
+}
+
+.comp-table tbody td.col-ours {
+  background: rgba(11,29,74,0.04);
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.comp-table tbody td.col-others {
+  background: var(--white);
+  color: var(--text-light);
+}
+
+.yes-icon { color: #22c55e; font-size: 1rem; margin-right: 6px; }
+.no-icon  { color: #ef4444; font-size: 1rem; margin-right: 6px; }
+
+/* ============================================================
+   CERTIFICATIONS
+   ============================================================ */
+#sertifikalar {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.cert-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.cert-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 100px;
+}
+
+.cert-icon-box {
+  width: 84px; height: 84px;
+  background: var(--bg-light);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-align: center;
+  line-height: 1.3;
+  padding: 10px;
+  transition: all var(--transition);
+}
+
+.cert-icon-box.cert-halal {
+  font-size: 1.5rem;
+  font-family: serif;
+  font-weight: 700;
+}
+
+.cert-icon-box.cert-gmp {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.cert-item:hover .cert-icon-box {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+  transform: scale(1.06);
+  box-shadow: var(--shadow-md);
+}
+
+.cert-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-align: center;
+  max-width: 100px;
+  line-height: 1.3;
+}
+
+.free-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.free-tag {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 9px 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: all var(--transition);
+}
+
+.free-tag:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.free-tag i { color: var(--accent); transition: color var(--transition); }
+.free-tag:hover i { color: #6EE6A9; }
+
+/* ============================================================
+   RESPONSIVE — New Sections
+   ============================================================ */
+@media (max-width: 1024px) {
+  .drcaps-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .slide img { height: 320px; }
+  .slider-btn { width: 40px; height: 40px; font-size: 0.85rem; }
+  .slider-prev { left: 10px; }
+  .slider-next { right: 10px; }
+  .drcaps-grid { grid-template-columns: 1fr; }
+  .comp-table thead th, .comp-table tbody td { padding: 12px 16px; font-size: 0.85rem; }
+  .cert-grid { gap: 20px; }
 }

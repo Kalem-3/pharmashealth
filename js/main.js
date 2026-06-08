@@ -166,3 +166,53 @@ const countersObserver = new IntersectionObserver((entries) => {
 
 const heroStats = document.querySelector('.hero-stats');
 if (heroStats) countersObserver.observe(heroStats);
+
+// ---- Photo Gallery Slider ----
+(function initSlider() {
+  const track = document.getElementById('sliderTrack');
+  const dotsContainer = document.getElementById('sliderDots');
+  if (!track) return;
+
+  const slides = track.querySelectorAll('.slide');
+  const total = slides.length;
+  let current = 0;
+  let autoplayTimer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Görsel ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  document.getElementById('sliderPrev').addEventListener('click', () => { prev(); resetAutoplay(); });
+  document.getElementById('sliderNext').addEventListener('click', () => { next(); resetAutoplay(); });
+
+  function startAutoplay() { autoplayTimer = setInterval(next, 4500); }
+  function resetAutoplay() { clearInterval(autoplayTimer); startAutoplay(); }
+
+  const sliderEl = track.closest('.gallery-slider');
+  sliderEl.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+  sliderEl.addEventListener('mouseleave', startAutoplay);
+
+  let touchStartX = 0;
+  sliderEl.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  sliderEl.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); resetAutoplay(); }
+  });
+
+  startAutoplay();
+})();
