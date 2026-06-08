@@ -2386,6 +2386,53 @@ section { padding: 100px 0; }
 
 .pricing-note i { color: var(--accent); }
 
+/* Onay checkboxları */
+.pricing-consent {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 18px;
+}
+
+.consent-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.consent-item input[type="checkbox"] {
+  width: 16px; height: 16px;
+  margin-top: 2px; flex-shrink: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.consent-item span {
+  font-size: 0.82rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.consent-item span a {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+
+.consent-item span a:hover { color: var(--primary); }
+
+.btn-iyzico.locked {
+  opacity: 0.45;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
 /* iyzico butonu */
 .btn-iyzico {
   display: inline-flex;
