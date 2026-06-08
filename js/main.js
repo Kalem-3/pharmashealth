@@ -61,6 +61,18 @@ function changeImg(el, src) {
   }
 })();
 
+// ---- Navbar Dropdown (touch desteği) ----
+document.querySelectorAll('.nav-dropdown').forEach(dd => {
+  dd.querySelector('.nav-dd-trigger').addEventListener('click', () => {
+    dd.classList.toggle('open');
+  });
+});
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-dropdown')) {
+    document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+  }
+});
+
 // ---- Smooth scroll for all anchor links ----
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
