@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <circle cx="60" cy="60" r="56" fill="#0B1D4A" stroke="#3DAA70" stroke-width="3"/>
+  <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(61,170,112,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="60" y="50" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="#3DAA70" letter-spacing="2">GMP</text>
+  <line x1="28" y1="58" x2="92" y2="58" stroke="#3DAA70" stroke-width="1.5"/>
+  <text x="60" y="73" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#fff" letter-spacing="1">GOOD MANUFACTURING</text>
+  <text x="60" y="85" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="600" fill="#fff" letter-spacing="1">PRACTICE</text>
+  <text x="60" y="98" text-anchor="middle" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.6)" letter-spacing="1">PREMIUM</text>
+</svg>

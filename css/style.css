@@ -3131,3 +3131,108 @@ section { padding: 100px 0; }
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.8);
 }
+
+/* ══════════════════════════════════════════
+   DÜZELTMELER — yeni tur
+   ══════════════════════════════════════════ */
+
+/* 1. Duodenal turuncu — override highlight */
+.hero-text h1 .highlight {
+  color: #F27A1A !important;
+  -webkit-text-fill-color: #F27A1A !important;
+}
+
+/* 1. Logo büyütme — orantılı */
+.logo-img {
+  height: 58px !important;
+  padding: 5px 12px !important;
+}
+.nav-logo img {
+  height: 58px !important;
+  max-height: 58px !important;
+}
+
+/* 2. Trust-bar / cert-strip — yazılar ve ikonlar daha büyük, okunaklı */
+#trust-bar {
+  padding: 28px 0;
+}
+.cert-strip {
+  gap: 14px 24px;
+}
+.cert-strip-item {
+  min-width: 80px;
+  max-width: 92px;
+}
+.cert-strip-icon {
+  width: 62px;
+  height: 62px;
+  font-size: 1.6rem;
+}
+.cert-strip-icon--iso {
+  font-size: 0.65rem;
+}
+.iso-num {
+  font-size: 0.85rem;
+}
+.cert-strip-name {
+  font-size: 0.78rem;
+}
+.cert-strip-sub {
+  font-size: 0.65rem;
+}
+
+/* 3. Nasıl kullanılır — kapsül emoji kaldırıldı, fa-capsules yeşil */
+.step-card--wide .step-num {
+  background: none;
+  color: #3DAA70;
+}
+
+/* Satın al notu kaldırıldı (HTML'den silindi) */
+
+
+/* ── Sertifika badge grid (pview-sertifikalar) ── */
+.cert-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 24px;
+  margin: 40px 0;
+}
+.cert-badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 130px;
+}
+.cert-badge-img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+  transition: transform 0.25s ease;
+}
+.cert-badge-item:hover .cert-badge-img {
+  transform: scale(1.06);
+}
+.cert-badge-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+}
+.cert-badge-desc {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.3;
+}
+.free-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
