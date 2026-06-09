@@ -3353,3 +3353,86 @@ section { padding: 100px 0; }
     min-height: 260px;
   }
 }
+
+/* ── Hakkımızda value-item span overflow fix ── */
+.value-item {
+  align-items: flex-start !important;
+}
+.value-item span {
+  font-size: 0.82rem !important;
+  line-height: 1.55 !important;
+}
+
+/* ── SSS butonları ── */
+.faq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.faq-btn:hover { opacity: 0.85; }
+.faq-btn--trendyol { background: #F27A1A; }
+
+/* ── Anlaşmalı Eczaneler section ── */
+#anlasmali-eczaneler {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+
+.eczane-grid {
+  margin-top: 32px;
+}
+
+.eczane-placeholder {
+  background: var(--white);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.eczane-placeholder-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(11,29,74,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.eczane-placeholder-text h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.eczane-placeholder-text p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Navbar'a Eczaneler linki için (sonradan navbar'a eklenebilir) */
+@media (max-width: 640px) {
+  .eczane-placeholder {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+}
