@@ -2933,11 +2933,22 @@ section { padding: 100px 0; }
 
 .fg-slide img {
   width: 100%;
-  height: auto;
+  height: 480px;
+  object-fit: contain;
+  object-position: center;
   display: block;
   border-radius: var(--radius-md);
+  background: #0d1f4e;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 900px) {
+  .fg-slide img { height: 360px; }
+}
+
+@media (max-width: 560px) {
+  .fg-slide img { height: 280px; }
 }
 
 .fg-slide img:hover {
@@ -3011,4 +3022,112 @@ section { padding: 100px 0; }
   .fg-btn { width: 40px; height: 40px; font-size: 0.9rem; }
   .fg-prev { left: 8px; }
   .fg-next { right: 8px; }
+}
+
+/* ── Logo büyütme & sola alma ── */
+.nav-logo img {
+  height: 52px !important;
+  max-height: 52px !important;
+}
+.nav-logo {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* ── Sertifika şeridi (trust-bar) ── */
+.cert-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 20px;
+  padding: 8px 0;
+}
+.cert-strip-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 72px;
+}
+.cert-strip-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #6EE6A9;
+}
+.cert-strip-icon--iso {
+  font-size: 0.55rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.cert-strip-icon--iso span:first-child { font-size: 0.6rem; opacity: 0.8; }
+.iso-num { font-size: 0.75rem; font-weight: 900; color: #6EE6A9; }
+.cert-strip-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+.cert-strip-sub {
+  font-size: 0.62rem;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+}
+
+/* ── Nasıl kullanılır - tek geniş kart ── */
+.steps-row--single {
+  display: flex;
+  justify-content: center;
+}
+.step-card--wide {
+  max-width: 480px;
+  text-align: center;
+}
+.step-card--wide .step-num { font-size: 2rem; }
+
+/* ── Gıda takviyesi uyarısı (icerik-detay pview) ── */
+.gida-uyari {
+  background: #fff0f0;
+  border: 2px solid #e53935;
+  color: #c62828;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ── Hero secondary outline button ── */
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.btn-secondary-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.8);
 }

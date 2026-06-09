@@ -77,18 +77,17 @@
     <div class="container hero-inner">
       <div class="hero-text" data-aos="fade-right" data-aos-duration="900">
         <span class="badge">Yeni Nesil Magnezyum Takviyesi</span>
-        <h1>Magnesium<br /><span class="highlight">Duodenal</span></h1>
+        <h1>Magnesium<br /><span class="highlight" style="color:#E8621A;">Duodenal</span></h1>
         <p class="hero-sub">
           Duodenal salınım teknolojisiyle maksimum emilim. Stres, yorgunluk ve
           kas sağlığınız için bilimsel formül.
         </p>
         <div class="hero-actions">
-          <a href="https://wa.me/905332595815?text=Merhaba,%20Magnesium%20Duodenal%20hakkında%20bilgi%20almak%20istiyorum." class="btn-primary" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp Bilgi Hattı
+          <a href="#satin-al" class="btn-primary" onclick="document.getElementById('satin-al').scrollIntoView({behavior:'smooth'}); return false;">
+            <i class="fa-solid fa-bag-shopping"></i> Satın Al
           </a>
-          <a href="https://www.trendyol.com/magaza/pharmas-health-m-1272271?channelId=1&sst=0&sk=1" class="btn-trendyol" target="_blank">
-            <img src="images/trendyol-icon.png" alt="" class="btn-trendyol-icon" onerror="this.style.display='none'" />
-            Trendyol'da Satın Al
+          <a href="#" onclick="openProdView('urun'); return false;" class="btn-secondary-outline">
+            <i class="fa-solid fa-circle-info"></i> Ürünü İncele
           </a>
         </div>
         <div class="hero-stats">
@@ -122,26 +121,18 @@
 
   <!-- ========== TRUST BAR ========== -->
   <section id="trust-bar">
-    <div class="container trust-inner">
-      <div class="trust-item" data-aos="fade-up" data-aos-delay="0">
-        <i class="fa-solid fa-flask"></i>
-        <span>Klinik Test Onaylı</span>
-      </div>
-      <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-seedling"></i>
-        <span>Gluten ve Şeker İçermez</span>
-      </div>
-      <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-shield-halved"></i>
-        <span>GMP Sertifikalı Üretim</span>
-      </div>
-      <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-truck-fast"></i>
-        <span>Hızlı & Güvenli Teslimat</span>
-      </div>
-      <div class="trust-item" data-aos="fade-up" data-aos-delay="400">
-        <i class="fa-solid fa-headset"></i>
-        <span>7/24 Bilgi & Destek</span>
+    <div class="container">
+      <div class="cert-strip" data-aos="fade-up">
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-shield-halved"></i></div><span class="cert-strip-name">GMP</span><span class="cert-strip-sub">Sertifikalı Üretim</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-star-and-crescent"></i></div><span class="cert-strip-name">Helal</span><span class="cert-strip-sub">Sertifikalı</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon cert-strip-icon--iso"><span>ISO</span><span class="iso-num">9001</span></div><span class="cert-strip-name">ISO 9001</span><span class="cert-strip-sub">Kalite Yönetim</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon cert-strip-icon--iso"><span>ISO</span><span class="iso-num">14001</span></div><span class="cert-strip-name">ISO 14001</span><span class="cert-strip-sub">Çevre Yönetim</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon cert-strip-icon--iso"><span>ISO</span><span class="iso-num">22000</span></div><span class="cert-strip-name">ISO 22000</span><span class="cert-strip-sub">Gıda Güvenliği</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-leaf"></i></div><span class="cert-strip-name">Vegan</span><span class="cert-strip-sub">Bitkisel İçerik</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-seedling"></i></div><span class="cert-strip-name">Gluten Free</span><span class="cert-strip-sub">İçermez</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-droplet-slash"></i></div><span class="cert-strip-name">Laktoz Free</span><span class="cert-strip-sub">İçermez</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-recycle"></i></div><span class="cert-strip-name">Geri Dönüş.</span><span class="cert-strip-sub">Ambalaj</span></div>
+        <div class="cert-strip-item"><div class="cert-strip-icon"><i class="fa-solid fa-headset"></i></div><span class="cert-strip-name">Bilgi Hattı</span><span class="cert-strip-sub">10:00–20:00</span></div>
       </div>
     </div>
   </section>
@@ -196,36 +187,7 @@
   
 
   <!-- ========== SİPARİŞ CTA BANNER ========== -->
-  <section id="siparis-banner">
-    <div class="container">
-      <div class="cta-banner" data-aos="zoom-in">
-        <div class="cta-banner-img">
-          <img src="images/gorseliki.png" alt="Magnesium Duodenal" />
-        </div>
-        <div class="cta-banner-content">
-          <span class="cta-tag">Hemen Sipariş Verin</span>
-          <h2>Magnesium Duodenal<br/>Şimdi Sipariş Verin</h2>
-          <p>WhatsApp bilgi hattımızdan bilgi alın veya Trendyol mağazamızdan güvenle satın alın.</p>
-          <div class="cta-buttons">
-            <a href="https://wa.me/905332595815?text=Merhaba,%20Magnesium%20Duodenal%20sipari%C5%9F%20vermek%20istiyorum." class="cta-btn-wa" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i>
-              <div>
-                <span class="cta-btn-label">Bilgi için</span>
-                <span class="cta-btn-title">WhatsApp'a Yaz</span>
-              </div>
-            </a>
-            <a href="https://www.trendyol.com/magaza/pharmas-health-m-1272271?channelId=1&sst=0&sk=1" class="cta-btn-ty" target="_blank">
-              <svg width="28" height="28" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="white" fill-opacity="0.2"/><path d="M12 14h16l-2.5 10H14.5L12 14z" fill="white"/><path d="M15 12l1 4M25 12l-1 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <div>
-                <span class="cta-btn-label">Güvenli alışveriş</span>
-                <span class="cta-btn-title">Trendyol'da Satın Al</span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  
 
   <!-- ========== HOW IT WORKS ========== -->
   <section id="nasil-calisir">
@@ -235,33 +197,12 @@
         <h2>Nasıl Kullanılır?</h2>
         <p>Maksimum fayda için önerilen kullanım şekli</p>
       </div>
-      <div class="steps-row">
-        <div class="step-card" data-aos="fade-up" data-aos-delay="0">
-          <div class="step-num">01</div>
-          <i class="fa-solid fa-sun step-icon"></i>
-          <h4>Sabah Dozu</h4>
-          <p>Kahvaltıyla birlikte 1 tablet alın. Günün başlangıcında enerji ve odaklanma sağlar.</p>
-        </div>
-        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="step-card" data-aos="fade-up" data-aos-delay="150">
-          <div class="step-num">02</div>
-          <i class="fa-solid fa-glass-water step-icon"></i>
-          <h4>Bol Su ile Alın</h4>
-          <p>Bir bardak su ile birlikte alın. Duodenal teknoloji etkin maddeyi en iyi ortamda serbest bırakır.</p>
-        </div>
-        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="step-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="step-num">03</div>
-          <i class="fa-solid fa-moon step-icon"></i>
-          <h4>Gece Dozu</h4>
-          <p>Uyumadan 30 dk önce 1 tablet daha alın. Uyku kalitesini ve kas dinlenmesini destekler.</p>
-        </div>
-        <div class="step-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        <div class="step-card" data-aos="fade-up" data-aos-delay="450">
-          <div class="step-num">04</div>
-          <i class="fa-solid fa-calendar-check step-icon"></i>
-          <h4>Düzenli Kullanım</h4>
-          <p>3 haftalık düzenli kullanım sonrası en belirgin sonuçlar ortaya çıkar.</p>
+      <div class="steps-row steps-row--single" data-aos="fade-up">
+        <div class="step-card step-card--wide">
+          <div class="step-num">💊</div>
+          <i class="fa-solid fa-capsules step-icon"></i>
+          <h4>Kullanım Önerisi</h4>
+          <p>Günde 1 veya 2 kapsül olarak <strong>tok karına</strong> tüketilmesi tavsiye olunur.</p>
         </div>
       </div>
     </div>
@@ -301,14 +242,14 @@
             <i class="fa-solid fa-microscope"></i>
             <div>
               <strong>Bilim Odaklı</strong>
-              <span>Her formül klinik araştırmalara dayanır</span>
+              <span>Klinik çalışmalar ile desteklenen bilimsel kökenli ve kalite odaklı içerikler.</span>
             </div>
           </div>
           <div class="value-item">
             <i class="fa-solid fa-leaf"></i>
             <div>
               <strong>Doğal & Saf</strong>
-              <span>Zararlı katkı maddesi içermez</span>
+              <span>Topak önleyici, renklendirici, kıvam arttırıcı, tatlandırıcı, silikon dioksit, titanyum dioksit, laktoz, glüten içermeyen Clean Label ürünler.</span>
             </div>
           </div>
           <div class="value-item">
@@ -319,15 +260,7 @@
             </div>
           </div>
         </div>
-        <div class="order-buttons">
-          <a href="https://wa.me/905332595815?text=Merhaba,%20Magnesium%20Duodenal%20hakkında%20bilgi%20almak%20istiyorum." class="btn-primary" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp
-          </a>
-          <a href="https://www.trendyol.com/magaza/pharmas-health-m-1272271?channelId=1&sst=0&sk=1" class="btn-trendyol" target="_blank">
-            <svg width="16" height="16" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#F27A1A"/><path d="M12 14h16l-2.5 10H14.5L12 14z" fill="white"/><path d="M15 12l1 4M25 12l-1 4" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-            Trendyol
-          </a>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -365,12 +298,12 @@
         <div class="why-card" data-aos="zoom-in" data-aos-delay="400">
           <i class="fa-solid fa-rotate-left"></i>
           <h4>Memnuniyet Garantisi</h4>
-          <p>Ürününüzden memnun kalmazsanız iade garantisi sunuyoruz. Müşteri memnuniyeti önceliğimizdir.</p>
+          <p>Yüksek kullanıcı uyumu ve müşteri memnuniyeti.</p>
         </div>
         <div class="why-card" data-aos="zoom-in" data-aos-delay="500">
           <i class="fa-solid fa-comments"></i>
-          <h4>7/24 Destek</h4>
-          <p>WhatsApp bilgi hattı ve e-posta üzerinden sorularınızı yanıtlayan uzman ekibimiz her zaman yanınızda.</p>
+          <h4>Destek Hattı</h4>
+          <p>WhatsApp bilgi hattımız ve e-posta üzerinden sorularınızı yanıtlayan uzman ekibimiz her zaman yanınızda.</p>
         </div>
       </div>
     </div>
@@ -474,21 +407,11 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>Ürün ne zaman etki göstermeye başlar?</span>
-            <i class="fa-solid fa-chevron-down"></i>
-          </button>
-          <div class="faq-a">
-            <p>İlk etkiler genellikle 1–2 haftalık düzenli kullanım sonrasında hissedilir. Uyku kalitesi ve enerji seviyesindeki iyileşmeler çoğunlukla ilk haftada başlar. Kas sağlığı ve stres yönetimindeki en belirgin sonuçlar için en az 3 haftalık düzenli kullanım önerilir.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
             <span>Günde kaç kapsül almalıyım ve ne zaman?</span>
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-a">
-            <p>Günde 1 kapsül yeterlidir. Sabah kahvaltıyla birlikte veya akşam yatmadan 30 dakika önce bir bardak suyla alınması önerilir. Akşam alımı özellikle uyku kalitesi ve kas gevşemesi açısından daha etkili olabilir.</p>
+            <p>Günde 1 tok veya sabah akşam tok karına 1'er kapsül şeklinde kullanımı önerilir.</p>
           </div>
         </div>
 
@@ -498,7 +421,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-a">
-            <p>Evet. Capsugel® DRcaps® bitkisel kapsül teknolojisi sayesinde ürün mide ortamında çözünmez; bağırsakta salınır. Bu özelliği, mide hassasiyeti olan bireyler için özellikle avantajlıdır. Standart magnezyum tabletlerine kıyasla mide rahatsızlığı yaratma riski çok düşüktür.</p>
+            <p>Evet. Capsugel® DRcaps® bitkisel kapsül teknolojisi sayesinde ürün mide ortamında çözünmez; bağırsakta ve yavaş salınır. Bu özelliği, mide hassasiyeti olan bireyler için özellikle avantajlıdır. Standart magnezyum tabletlerine kıyasla mide rahatsızlığı yaratma riski çok düşüktür ve yüksek emilim sağlar.</p>
           </div>
         </div>
 
@@ -518,7 +441,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-a">
-            <p>Genel olarak güvenlidir; ancak düzenli ilaç kullananların hekimleriyle görüşmesi önerilir. Özellikle kan sulandırıcı, antibiyotik veya tiroid ilaçlarıyla birlikte kullanımda doktor tavsiyesi alınmalıdır. Alım zamanını ilaçlardan en az 2 saat ayırmak genellikle yeterlidir.</p>
+            <p>Genel olarak güvenlidir; ancak düzenli ilaç kullananların hekimleriyle görüşmesi önerilir. Özellikle kan sulandırıcı, antibiyotik veya tiroid ilaçlarıyla birlikte kullanımda doktor tavsiyesi alınmalıdır.</p>
           </div>
         </div>
 
@@ -534,11 +457,11 @@
 
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">
-            <span>30 ve 90 kapsül seçeneği arasındaki fark nedir?</span>
+            <span>90 kapsüllük paket kaç aylık kullanıma yeter?</span>
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-a">
-            <p>Her iki seçenekte de aynı formül kullanılır. 30 kapsüllük paket 1 aylık, 90 kapsüllük paket ise 3 aylık kullanıma karşılık gelir. Uzun süreli kullanım için 90 kapsüllük seçenek hem daha ekonomik hem de tedavi sürekliği açısından daha avantajlıdır.</p>
+            <p>90 kapsüllük paket, günde 1 kapsül kullanımıyla 3 aylık kullanıma karşılık gelir. Düzenli kullanım için hem ekonomik hem de pratik bir seçenektir.</p>
           </div>
         </div>
 
@@ -575,10 +498,10 @@
           </div>
           <ul class="pricing-features">
             <li><i class="fa-solid fa-check"></i> 90 bitkisel DRcaps® kapsül</li>
-            <li><i class="fa-solid fa-check"></i> 210 mg elementel magnezyum</li>
-            <li><i class="fa-solid fa-check"></i> 5 organik Mg formu</li>
+            <li><i class="fa-solid fa-check"></i> 210 mg toplam elementel kapsül içeriği</li>
+            <li><i class="fa-solid fa-check"></i> 5 Aktif Magnezyum formu</li>
             <li><i class="fa-solid fa-check"></i> B6 (P5P) + Çinko Pikolinat</li>
-            <li><i class="fa-solid fa-check"></i> Günde 1 kullanım</li>
+            <li><i class="fa-solid fa-check"></i> Günde 1 kapsül ile Kullanım Kolaylığı</li>
             <li><i class="fa-solid fa-star" style="color:#F0B429;"></i> <strong>En ekonomik seçenek</strong></li>
           </ul>
           <div class="pricing-consent" id="pricingConsent">
@@ -605,9 +528,7 @@
               <svg width="20" height="20" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="white"/><text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" font-size="10" font-weight="800" fill="#1a1aff">iyzico</text></svg>
               Kredi Kartı ile Öde
             </a>
-            <a href="https://wa.me/905332595815?text=Merhaba,%2090%20kapsüllük%20Magnesium%20Duodenal%205%20sipari%C5%9F%20vermek%20istiyorum." class="btn-primary" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp Bilgi Hattı
-            </a>
+
             <a href="https://www.trendyol.com/magaza/pharmas-health-m-1272271?channelId=1&sst=0&sk=1" class="btn-trendyol" target="_blank">
               <i class="fa-solid fa-bag-shopping"></i> Trendyol
             </a>
@@ -678,7 +599,7 @@
             <i class="fa-solid fa-clock"></i>
             <div>
               <strong>Çalışma Saatleri</strong>
-              <span>Pazartesi – Cuma: 09:00 – 18:00</span>
+              <span>Pazartesi – Cuma: 10:00 – 20:00</span>
             </div>
           </div>
 
@@ -900,18 +821,17 @@
         </div>
 
         <div class="product-details">
-          <div class="product-tag">Magnezyum Takviyesi</div>
+          <div class="product-tag">210 mg Elementel Kapsül İçeriği</div>
           <h3>Magnesium Duodenal</h3>
           <p class="product-desc">
             Özel duodenal salınım teknolojisi sayesinde magnezyum, ince bağırsakta en ideal
-            ortamda çözünerek vücuda maksimum oranda emilir. Stres dönemlerinde tükenen
-            magnezyumu yenilemenin en etkili yolu.
+            ortamda çözünerek maksimum oranda emilir. 210 mg elementel kapsül içeriği ile güçlü destek.
           </p>
 
           <div class="product-highlights">
             <div class="ph-item">
               <i class="fa-solid fa-circle-check"></i>
-              <span>5 organik Magnezyum formu içeren güçlü formül — <strong>210 mg elementel magnezyum</strong> içeriği</span>
+              <span>5 organik Magnezyum formu içeren güçlü formül — <strong>210 mg elementel kapsül içeriği</strong> içeriği</span>
             </div>
             <div class="ph-item">
               <i class="fa-solid fa-circle-check"></i>
@@ -927,7 +847,7 @@
             </div>
             <div class="ph-item">
               <i class="fa-solid fa-circle-check"></i>
-              <span><strong>30</strong> ve <strong>90 DrCaps</strong> seçeneği — günde 1 kullanım ile aylık ve 3 aylık bütçe dostu kullanım kolaylığı</span>
+              <span><strong>90 DrCaps</strong> kapsül — günde 1 kullanım ile 3 aylık bütçe dostu kullanım kolaylığı</span>
             </div>
           </div>
 
@@ -954,7 +874,7 @@
               <tr><td>Magnezyum Malat</td><td>10 mg</td></tr>
               <tr><td>B6 Vitamini (P5P)</td><td>10 mg</td></tr>
               <tr><td>Çinko Pikolinat</td><td>10 mg</td></tr>
-              <tr class="ing-total"><td>Toplam Elementel Magnezyum</td><td>210 mg</td></tr>
+              <tr class="ing-total"><td>Toplam Elementel Kapsül İçeriği</td><td>210 mg</td></tr>
             </table>
           </div>
 
@@ -1042,7 +962,7 @@
           <div class="feature-icon" style="--icon-color: #3DAA70;">
             <i class="fa-solid fa-brain"></i>
           </div>
-          <h4>Stres Yönetimi</h4>
+          <h4>Magnezyum & Stres Yönetimi</h4>
           <p>Kortizol seviyelerini dengeleyerek stres ve anksiyete belirtilerini hafifletir. Zihinsel netliği artırır.</p>
         </div>
 
@@ -1050,7 +970,7 @@
           <div class="feature-icon" style="--icon-color: #5B6EF5;">
             <i class="fa-solid fa-moon"></i>
           </div>
-          <h4>Derin & Kaliteli Uyku</h4>
+          <h4>Magnezyum & Derin Uyku</h4>
           <p>Melatonin üretimini destekleyerek uyku döngüsünü düzenler. Sabah daha dinç uyanmanızı sağlar.</p>
         </div>
 
@@ -1058,7 +978,7 @@
           <div class="feature-icon" style="--icon-color: #E8621A;">
             <i class="fa-solid fa-dumbbell"></i>
           </div>
-          <h4>Kas & Eklem Sağlığı</h4>
+          <h4>Magnezyum & Kas Sağlığı</h4>
           <p>Kas kasılmalarını düzenler, kramp ve gerginliği önler. Spor performansını artırır ve toparlanmayı hızlandırır.</p>
         </div>
 
@@ -1105,6 +1025,8 @@
     </button>
   </div>
   <div class="pview-body">
+    <div class="gida-uyari"><i class="fa-solid fa-triangle-exclamation"></i> GIDA TAKVİYELERİ İLAÇ DEĞİLDİR, İLAÇ YERİNE KULLANILMAZ!</div>
+
     <div class="container">
       <div class="container">
       <div class="section-header">
