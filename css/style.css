@@ -3512,3 +3512,166 @@ section { padding: 100px 0; }
 }
 
 .eczane-note i { color: var(--accent); }
+
+/* ══════════════════════════════════════════
+   GENEL GÖRÜNÜM İYİLEŞTİRMELERİ
+   ══════════════════════════════════════════ */
+
+/* ── Maps butonu ── */
+.eczane-maps-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 5px 12px;
+  background: #4285F4;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.eczane-maps-btn:hover {
+  background: #1a73e8;
+  transform: translateY(-1px);
+}
+.eczane-maps-btn i { font-size: 0.8rem; }
+
+/* ── Navbar — daha belirgin gölge & blur ── */
+.navbar {
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 2px 20px rgba(11,29,74,0.12) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Hero stats — sayı animasyonu için renk ── */
+.stat-num {
+  background: linear-gradient(135deg, #fff 0%, #a8f0cc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section header badge — daha parlak ── */
+.section-badge {
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* ── Feature cards (faydaları) — hover gölge ── */
+.feature-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.feature-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10) !important;
+}
+
+/* ── Why cards (neden biz) — gradient border on hover ── */
+.why-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(61,170,112,0.15), rgba(11,29,74,0.05));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.why-card:hover { transform: translateY(-5px) !important; }
+.why-card:hover::before { opacity: 1; }
+
+/* ── Review cards — softer shadow ── */
+.review-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.review-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10) !important;
+}
+
+/* ── FAQ — smoother transition ── */
+.faq-a {
+  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.3s ease !important;
+}
+
+/* ── Pricing card — glow effect ── */
+.pricing-card.pricing-featured {
+  box-shadow: 0 8px 40px rgba(61,170,112,0.2), 0 2px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* ── Buttons — subtle lift ── */
+.btn-primary, .btn-trendyol {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease !important;
+}
+.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(61,170,112,0.35) !important;
+}
+.btn-trendyol:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(242,122,26,0.35) !important;
+}
+
+/* ── Section dividers — subtle gradient line ── */
+#nasil-calisir,
+#hakkimizda,
+#yorumlar,
+#sss {
+  position: relative;
+}
+#nasil-calisir::before,
+#yorumlar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(61,170,112,0.25), transparent);
+}
+
+/* ── Step card (nasıl kullanılır) — centered & bigger ── */
+.step-card--wide {
+  border: 2px solid rgba(61,170,112,0.25) !important;
+  box-shadow: 0 8px 32px rgba(61,170,112,0.08) !important;
+  padding: 40px 48px !important;
+}
+.step-card--wide h4 { font-size: 1.15rem !important; }
+.step-card--wide p  { font-size: 1rem !important; }
+
+/* ── Footer — daha şık ── */
+footer {
+  border-top: 2px solid rgba(255,255,255,0.06) !important;
+}
+
+/* ── Scroll bar — branded ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #3DAA70; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #2d8a5a; }
+
+/* ── pview body scrollbar ── */
+.pview-body::-webkit-scrollbar { width: 5px; }
+.pview-body::-webkit-scrollbar-track { background: #f8fafc; }
+.pview-body::-webkit-scrollbar-thumb { background: #3DAA70; border-radius: 3px; }
+
+/* ── Eczane kart ikon rengi ── */
+.eczane-icon {
+  background: rgba(11,29,74,0.07) !important;
+  color: var(--primary) !important;
+  transition: background 0.2s, color 0.2s;
+}
+.eczane-card:hover .eczane-icon {
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+/* ── Trust bar cert strip — daha büyük ── */
+#trust-bar {
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
