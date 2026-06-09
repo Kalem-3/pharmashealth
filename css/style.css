@@ -3236,3 +3236,81 @@ section { padding: 100px 0; }
   padding-top: 28px;
   border-top: 1px solid var(--border);
 }
+
+/* ── Cert strip visual (trust-bar SVG ikonlar) ── */
+#trust-bar { background: #fff; padding: 32px 0; }
+.cert-strip-visual {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px 20px;
+}
+.csv-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 76px;
+}
+.csv-img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+.csv-icon-wrap {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #f0f8f4;
+  border: 2px solid #3DAA70;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #3DAA70;
+}
+.csv-name {
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  line-height: 1.2;
+}
+.csv-sub {
+  font-size: 0.62rem;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.2;
+}
+@media (max-width: 640px) {
+  .csv-item { width: 64px; }
+  .csv-img, .csv-icon-wrap { width: 52px; height: 52px; }
+  .csv-name { font-size: 0.68rem; }
+}
+
+/* ── İng-total-sub satırı ── */
+.ing-total-sub td {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  padding-top: 2px !important;
+  padding-bottom: 6px !important;
+}
+
+/* ── Flip card back — yazı sığdırma ── */
+.flip-back {
+  padding: 14px 16px !important;
+  overflow-y: auto;
+}
+.flip-back h4 {
+  font-size: 0.88rem !important;
+  margin-bottom: 8px !important;
+}
+.flip-back ul {
+  padding-left: 14px !important;
+}
+.flip-back li {
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 5px !important;
+}
