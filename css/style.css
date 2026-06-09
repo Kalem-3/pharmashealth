@@ -822,8 +822,8 @@ section { padding: 100px 0; }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   width: 100%;
-  object-fit: cover;
-  max-height: 440px;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-badge-float {
@@ -3436,3 +3436,79 @@ section { padding: 100px 0; }
     padding: 32px 24px;
   }
 }
+
+/* ── Anlaşmalı Eczaneler pview grid ── */
+.eczane-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.eczane-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-light);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.eczane-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.eczane-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(11,29,74,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.eczane-info h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.eczane-info p {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.eczane-info p i {
+  color: var(--accent);
+  font-size: 0.75rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.eczane-note {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: rgba(61,170,112,0.08);
+  border: 1px solid rgba(61,170,112,0.25);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eczane-note i { color: var(--accent); }

@@ -61,6 +61,7 @@
       <a href="#" onclick="openProdView('drcaps'); return false;" class="mobile-link mobile-sub">DRcaps Teknoloji</a>
       <a href="#" onclick="openProdView('karsilastirma'); return false;" class="mobile-link mobile-sub">Karşılaştırma</a>
       <a href="#" onclick="openProdView('sertifikalar'); return false;" class="mobile-link mobile-sub">Sertifikalar</a>
+      <a href="#" onclick="openProdView('eczaneler'); return false;" class="mobile-link mobile-sub">Anlaşmalı Eczaneler</a>
       <a href="#hakkimizda" class="mobile-link">Hakkımızda</a>
       <a href="#yorumlar" class="mobile-link">Yorumlar</a>
       <a href="#sss" class="mobile-link">SSS</a>
@@ -663,29 +664,6 @@
   </div>
 
   <!-- ========== CONTACT ========== -->
-  
-  <!-- ========== ANLAŞMALI ECZANELER ========== -->
-  <section id="anlasmali-eczaneler">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-badge">Satış Noktaları</span>
-        <h2>Anlaşmalı Eczaneler</h2>
-        <p>Magnesium Duodenal 5'i aşağıdaki eczanelerden temin edebilirsiniz. Liste güncellenmektedir.</p>
-      </div>
-      <div class="eczane-grid" data-aos="fade-up">
-        <div class="eczane-placeholder">
-          <div class="eczane-placeholder-icon"><i class="fa-solid fa-hospital"></i></div>
-          <div class="eczane-placeholder-text">
-            <h4>Eczane bilgileri yakında eklenecek</h4>
-            <p>Anlaşmalı eczanelerimizin iletişim bilgilerine buradan ulaşabileceksiniz. Güncel liste için bize WhatsApp üzerinden ulaşabilirsiniz.</p>
-            <a href="https://wa.me/905332595815?text=Merhaba,%20anlaşmalı%20eczaneler%20hakkında%20bilgi%20almak%20istiyorum." class="btn-primary" target="_blank" style="margin-top:12px;display:inline-flex;align-items:center;gap:8px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Bilgi Hattı</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========== /ANLAŞMALI ECZANELER ========== -->
-
   <section id="iletisim">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -1602,6 +1580,107 @@
       </div>
     </div>
   </div>
+
+<div class="pview" id="pview-eczaneler" role="region" aria-label="Anlaşmalı Eczaneler">
+  <div class="pview-topbar">
+    <div class="pview-topbar-left">
+      <button class="pview-back" onclick="closeProdView()" aria-label="Geri dön">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Geri</span>
+      </button>
+      <span class="pview-breadcrumb">Pharmas Sağlık / <strong>Anlaşmalı Eczaneler</strong></span>
+    </div>
+    <button class="pview-close" onclick="closeProdView()" aria-label="Kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+  <div class="pview-body">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Satış Noktaları</span>
+        <h2>Anlaşmalı Eczaneler</h2>
+        <p>Magnesium Duodenal 5'i aşağıdaki eczanelerimizden temin edebilirsiniz.</p>
+      </div>
+      <div class="eczane-grid">
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Annem Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Harmandere Mah. Reyhan Cad. No:65/A Pendik / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Ata Farma Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Kayışdağı Mah. Raci Cd. No:4C Ataşehir / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Çamlık Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Çamlık Mah. Selçuklu Cad. No:24/J Kurtköy, Pendik / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Çengelköy Yaşam Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Güzeltepe Mah. Zübeyde Hanım Cad. No:47/B Üsküdar / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Hizmet Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Çamlık Mah. Selçuklu Cad. No:24/C Pendik / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Merkez Çarşı Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Yenişehir Mah. Mustafa Akyol Sk. No:36 D:11 Pendik / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Önem Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Yenişehir Mah. Mustafa Akyol Sk. No:11/26 Pendik / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Polen Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Çamlık Mah. Selçuklu Cad. No:20AE Pendik / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Sinem Eczanesi</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Burhaniye Mah. Yunus Emre Sk. No:15/A Üsküdar / İstanbul</p>
+          </div>
+        </div>
+        <div class="eczane-card">
+          <div class="eczane-icon"><i class="fa-solid fa-hospital"></i></div>
+          <div class="eczane-info">
+            <h4>Yeşil Eczane</h4>
+            <p><i class="fa-solid fa-location-dot"></i> Çamlık Mah. Selçuklu Cad. No:24/A Pendik / İstanbul</p>
+          </div>
+        </div>
+      </div>
+      <div class="eczane-note">
+        <i class="fa-solid fa-circle-info"></i>
+        Listede yer almayan eczaneler veya stok bilgisi için WhatsApp bilgi hattımızdan bize ulaşabilirsiniz.
+        <a href="https://wa.me/905332595815?text=Merhaba,%20anlaşmalı%20eczaneler%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn-primary" style="margin-left:12px;padding:6px 14px;font-size:0.82rem;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- ========== /PRODUCT VIEW PANELS ========== -->
 
 </body>
