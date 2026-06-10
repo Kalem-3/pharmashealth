@@ -27,7 +27,7 @@ a { text-decoration: none; color: inherit; }
   display: flex; align-items: center; justify-content: space-between; height: 64px;
 }
 .legal-logo { display: flex; align-items: center; }
-.legal-logo img { height: 36px; width: auto; background: white; border-radius: 6px; padding: 3px 8px; }
+.legal-logo img { height: 64px; width: auto; background: white; border-radius: 8px; padding: 6px 14px; }
 .legal-back {
   color: rgba(255,255,255,0.75); font-size: 0.88rem; font-weight: 500;
   display: flex; align-items: center; gap: 6px;
