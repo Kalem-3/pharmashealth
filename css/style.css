@@ -72,7 +72,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 88px;
 }
 
 .logo {
@@ -81,7 +81,7 @@ ul { list-style: none; }
 }
 
 .logo-img {
-  height: 64px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   background: white;
@@ -91,7 +91,7 @@ ul { list-style: none; }
 }
 
 .logo-img-footer {
-  height: 56px;
+  height: 72px;
   background: white;
   border-radius: 8px;
   padding: 6px 14px;
@@ -3144,12 +3144,12 @@ section { padding: 100px 0; }
 
 /* 1. Logo büyütme — orantılı */
 .logo-img {
-  height: 64px !important;
+  height: 80px !important;
   padding: 6px 14px !important;
 }
 .nav-logo img {
-  height: 64px !important;
-  max-height: 64px !important;
+  height: 80px !important;
+  max-height: 80px !important;
 }
 
 /* 2. Trust-bar / cert-strip — yazılar ve ikonlar daha büyük, okunaklı */

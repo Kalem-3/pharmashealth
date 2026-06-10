@@ -205,6 +205,19 @@ if (heroStats) countersObserver.observe(heroStats);
   rejectBtn.addEventListener('click', () => { localStorage.setItem('kvkk-consent', 'rejected'); dismiss(); });
 })();
 
+// ---- Pricing Consent ----
+function checkPricingConsent() {
+  const consents = document.querySelectorAll('#pricingConsent input[type="checkbox"]');
+  const btn = document.getElementById('iyzicoBtn');
+  if (!btn) return;
+  const allChecked = [...consents].every(c => c.checked);
+  btn.style.opacity = allChecked ? '1' : '0.5';
+  btn.style.pointerEvents = allChecked ? 'auto' : 'none';
+  btn.style.cursor = allChecked ? 'pointer' : 'not-allowed';
+}
+// Initialize consent button state on load
+document.addEventListener('DOMContentLoaded', () => { checkPricingConsent(); });
+
 // ---- FAQ Accordion ----
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
