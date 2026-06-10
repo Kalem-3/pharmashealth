@@ -2278,6 +2278,49 @@ section { padding: 100px 0; }
   background: linear-gradient(160deg, #f0f4ff 0%, var(--white) 60%);
 }
 
+.pricing-new-badge {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: #3DAA70;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pricing-soon-wrap {
+  text-align: center;
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px dashed var(--border);
+}
+
+.pricing-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232,98,26,0.08);
+  color: #E8621A;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(232,98,26,0.25);
+}
+
+.pricing-soon-note {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
 .pricing-popular-badge {
   position: absolute;
   top: -14px;
